@@ -1,0 +1,212 @@
+/* Programs Page Styles */
+
+/* Page Header */
+.page-header {
+  background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-800) 100%);
+  color: var(--white);
+  padding: var(--spacing-16) 0;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: var(--font-size-4xl);
+  color: var(--white);
+  margin-bottom: var(--spacing-4);
+}
+
+.page-header p {
+  font-size: var(--font-size-xl);
+  color: var(--gray-300);
+  margin-bottom: 0;
+}
+
+/* Programs List Section */
+.programs-list {
+  background-color: var(--white);
+}
+
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-8);
+}
+
+/* Program Card */
+.program-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.program-header {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  color: var(--white);
+  padding: var(--spacing-6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.program-header h3 {
+  color: var(--white);
+  font-size: var(--font-size-xl);
+  margin-bottom: 0;
+}
+
+.program-duration {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
+.program-card .card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.program-description {
+  color: var(--gray-600);
+  margin-bottom: var(--spacing-6);
+}
+
+/* Skills Section */
+.program-skills {
+  margin-bottom: var(--spacing-6);
+}
+
+.program-skills h4 {
+  font-size: var(--font-size-sm);
+  color: var(--gray-700);
+  margin-bottom: var(--spacing-3);
+}
+
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+}
+
+.skill-tag {
+  background-color: var(--gray-100);
+  color: var(--gray-700);
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+}
+
+/* Outcome Section */
+.program-outcome {
+  margin-bottom: var(--spacing-6);
+}
+
+.program-outcome h4 {
+  font-size: var(--font-size-sm);
+  color: var(--gray-700);
+  margin-bottom: var(--spacing-2);
+}
+
+.program-outcome p {
+  color: var(--secondary-color);
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+/* Button */
+.btn-block {
+  width: 100%;
+}
+
+/* Program Features Section */
+.program-features {
+  background-color: var(--gray-50);
+}
+
+.feature-item {
+  text-align: center;
+  padding: var(--spacing-6);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-4);
+}
+
+.feature-item h4 {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-3);
+  color: var(--gray-900);
+}
+
+.feature-item p {
+  color: var(--gray-600);
+  margin-bottom: 0;
+  font-size: var(--font-size-sm);
+}
+
+/* Programs CTA Section */
+.programs-cta {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  color: var(--white);
+}
+
+.programs-cta .cta-content {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.programs-cta h2 {
+  color: var(--white);
+  margin-bottom: var(--spacing-4);
+}
+
+.programs-cta p {
+  font-size: var(--font-size-lg);
+  opacity: 0.9;
+  margin-bottom: var(--spacing-6);
+}
+
+.programs-cta .btn-secondary {
+  background-color: var(--white);
+  color: var(--primary-color);
+}
+
+.programs-cta .btn-secondary:hover {
+  background-color: var(--gray-100);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .programs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    padding: var(--spacing-12) 0;
+  }
+  
+  .page-header h1 {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .page-header p {
+    font-size: var(--font-size-lg);
+  }
+  
+  .programs-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .program-header {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-3);
+  }
+}
+

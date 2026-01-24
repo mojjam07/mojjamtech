@@ -1,0 +1,205 @@
+/* Sponsorship Page Styles */
+
+/* Page Header */
+.page-header {
+  background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-800) 100%);
+  color: var(--white);
+  padding: var(--spacing-16) 0;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: var(--font-size-4xl);
+  color: var(--white);
+  margin-bottom: var(--spacing-4);
+}
+
+.page-header p {
+  font-size: var(--font-size-xl);
+  color: var(--gray-300);
+  margin-bottom: 0;
+}
+
+/* Why Sponsor Section */
+.why-sponsor {
+  background-color: var(--white);
+}
+
+.reason-card {
+  text-align: center;
+  padding: var(--spacing-8);
+  height: 100%;
+}
+
+.reason-icon {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-4);
+}
+
+.reason-card h3 {
+  margin-bottom: var(--spacing-3);
+  color: var(--gray-900);
+}
+
+.reason-card p {
+  color: var(--gray-600);
+  margin-bottom: 0;
+}
+
+/* Sponsorship Options Section */
+.sponsorship-options {
+  background-color: var(--gray-50);
+}
+
+.option-card {
+  position: relative;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.option-card.featured {
+  border: 2px solid var(--primary-color);
+  transform: scale(1.05);
+  z-index: 1;
+}
+
+.option-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.option-header {
+  background-color: var(--gray-100);
+  padding: var(--spacing-6);
+  text-align: center;
+}
+
+.option-header h3 {
+  margin-bottom: var(--spacing-2);
+  color: var(--gray-900);
+}
+
+.option-description {
+  color: var(--gray-600);
+  font-size: var(--font-size-sm);
+  margin-bottom: 0;
+}
+
+.option-card .card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.option-features {
+  list-style: none;
+  margin-bottom: var(--spacing-6);
+  flex: 1;
+}
+
+.option-features li {
+  padding: var(--spacing-2) 0;
+  padding-left: var(--spacing-6);
+  position: relative;
+  color: var(--gray-700);
+  font-size: var(--font-size-sm);
+}
+
+.option-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+/* Sponsor Benefits Section */
+.sponsor-benefits {
+  background-color: var(--white);
+}
+
+.benefit-item {
+  text-align: center;
+  padding: var(--spacing-6);
+}
+
+.benefit-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-4);
+}
+
+.benefit-item h3 {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-3);
+  color: var(--gray-900);
+}
+
+.benefit-item p {
+  color: var(--gray-600);
+  margin-bottom: 0;
+}
+
+/* Sponsorship CTA Section */
+.sponsorship-cta {
+  background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-dark) 100%);
+  color: var(--white);
+}
+
+.sponsorship-cta .cta-content {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.sponsorship-cta h2 {
+  color: var(--white);
+  margin-bottom: var(--spacing-4);
+}
+
+.sponsorship-cta p {
+  font-size: var(--font-size-lg);
+  opacity: 0.9;
+  margin-bottom: var(--spacing-6);
+}
+
+.sponsorship-cta .btn-primary {
+  background-color: var(--white);
+  color: var(--accent-dark);
+}
+
+.sponsorship-cta .btn-primary:hover {
+  background-color: var(--gray-100);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .option-card.featured {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    padding: var(--spacing-12) 0;
+  }
+  
+  .page-header h1 {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .page-header p {
+    font-size: var(--font-size-lg);
+  }
+}
+

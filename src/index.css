@@ -1,0 +1,9 @@
+/* Global Styles - Variables and Base Styles */
+@import './styles/variables.css';
+@import './styles/base.css';
+
+/* Root App Styles */
+#root {
+  min-height: 100vh;
+}
+
