@@ -19,8 +19,8 @@ function Header() {
         <div className="header-content">
           {/* Logo */}
           <Link to="/" className="logo" onClick={closeMenu}>
-            <img src="/logo.png" alt="MOJJAM TECHNOLOGIES" className="logo-img" />
-            <span className="logo-text">MOJJAM TECHNOLOGIES</span>
+            <img src="/logo1.png" alt="MOJJAM TECHNOLOGIES" className="logo-img" />
+            {/* <span className="logo-text">MOJJAM TECHNOLOGIES</span> */}
           </Link>
           
           {/* Mobile Menu Button */}

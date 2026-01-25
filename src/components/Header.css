@@ -1,7 +1,7 @@
 /* Header Styles */
 .header {
-  background-color: var(--white);
-  box-shadow: var(--shadow-sm);
+  background-color: var(--gray-900);
+  box-shadow: var(--shadow-md);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -35,7 +35,7 @@
 .logo-text {
   font-size: var(--font-size-lg);
   font-weight: 700;
-  color: var(--gray-900);
+  color: var(--white);
   white-space: nowrap;
   letter-spacing: -0.5px;
 }
@@ -81,7 +81,7 @@
 
 .nav-link {
   padding: var(--spacing-2) var(--spacing-4);
-  color: var(--gray-700);
+  color: var(--gray-300);
   font-weight: 500;
   font-size: var(--font-size-sm);
   border-radius: var(--radius-md);
@@ -98,14 +98,14 @@
   transform: translateX(-50%) scaleX(0);
   width: 60%;
   height: 2px;
-  background-color: var(--primary-color);
+  background-color: var(--primary-light);
   transition: transform var(--transition-fast);
   border-radius: 1px;
 }
 
 .nav-link:hover {
-  color: var(--primary-color);
-  background-color: var(--gray-100);
+  color: var(--white);
+  background-color: var(--gray-800);
 }
 
 .nav-link:hover::after {
@@ -113,9 +113,8 @@
 }
 
 .nav-link.active {
-  color: var(--primary-color);
+  color: var(--white);
   background-color: var(--primary-color);
-  color: var(--white) !important;
 }
 
 .nav-link.active::after {
@@ -124,7 +123,7 @@
 
 .nav-link-admin {
   background-color: var(--primary-color);
-  color: var(--white) !important;
+  color: var(--gray-800) !important;
   padding: var(--spacing-2) var(--spacing-5);
 }
 
@@ -133,7 +132,7 @@
 }
 
 .nav-link-admin:hover {
-  background-color: var(--primary-dark);
+  background-color: var(--primary-light);
   transform: translateY(-1px);
 }
 
@@ -160,14 +159,14 @@
 }
 
 .mobile-menu-btn:hover {
-  background-color: var(--gray-100);
+  background-color: var(--gray-800);
 }
 
 .mobile-menu-btn span {
   display: block;
   width: 22px;
   height: 2px;
-  background-color: var(--gray-700);
+  background-color: var(--white);
   border-radius: 2px;
   transition: all var(--transition-fast);
   transform-origin: center;
@@ -201,10 +200,9 @@
     position: fixed;
     top: 0;
     right: -100%;
-    width: 300px;
-    max-width: 85vw;
+    width: 20vw;
     height: 100vh;
-    background-color: var(--white);
+    background-color: var(--gray-900);
     box-shadow: var(--shadow-xl);
     padding-top: calc(var(--header-height) + var(--spacing-4));
     transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -239,10 +237,12 @@
     border-radius: var(--radius-lg);
     margin-bottom: var(--spacing-1);
     min-height: 48px;
+    color: var(--gray-300);
   }
   
   .nav-link:hover {
-    background-color: var(--gray-100);
+    background-color: var(--gray-800);
+    color: var(--white);
     transform: translateX(4px);
   }
   
@@ -256,6 +256,10 @@
     padding: var(--spacing-4) var(--spacing-5);
     justify-content: center;
   }
+
+  .nav-link-admin:hover {
+    color: var(--white) !important;
+  }
   
   .mobile-overlay {
     position: fixed;
@@ -263,7 +267,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
     opacity: 0;
@@ -332,9 +336,16 @@
     padding: var(--spacing-3) var(--spacing-5);
     font-size: var(--font-size-base);
   }
-  
+
   .nav-list {
     gap: var(--spacing-2);
+  }
+}
+
+/* Desktop navigation alignment */
+@media (min-width: 993px) {
+  .nav-list {
+    justify-content: flex-end;
   }
 }
 
