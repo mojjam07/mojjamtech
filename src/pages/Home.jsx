@@ -10,7 +10,7 @@ function Home() {
           <div className="hero-content">
             <h1 className="hero-title">Empowering the Next Generation of Developers</h1>
             <p className="hero-subtitle">
-              We provide comprehensive training, mentorship, and tech services to help aspiring developers build successful careers in technology.
+              We provide comprehensive training, mentorship, to help aspiring developers build successful careers in technology, and we also provide tech services that help companies build software solutions.
             </p>
             <div className="hero-buttons">
               <Link to="/sponsorship" className="btn btn-primary btn-lg">Become a Sponsor</Link>
@@ -41,7 +41,7 @@ function Home() {
             <div className="card what-we-do-card">
               <div className="card-icon">💼</div>
               <h3>Tech Services</h3>
-              <p>Real-world projects and opportunities to apply your skills and build your portfolio.</p>
+              <p>Real-world projects services that build branded software solutions for companies and organizations.</p>
             </div>
           </div>
         </div>
