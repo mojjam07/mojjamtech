@@ -22,7 +22,7 @@ function AdminLogin() {
       <div className="login-container">
         <div className="login-card">
           <div className="login-header">
-            <img src="/logo.png" alt="MOJJAM TECHNOLOGIES" className="login-logo" />
+            <img src="/logo2.png" alt="MOJJAM TECHNOLOGIES" className="login-logo" />
             <h1>Admin Login</h1>
             <p>Enter your credentials to access the dashboard</p>
           </div>
