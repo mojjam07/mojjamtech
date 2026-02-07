@@ -51,7 +51,7 @@
 .footer-description {
   font-size: var(--font-size-sm);
   line-height: 1.7;
-  color: var(--gray-400);
+  color: var(--gray-300);
   margin-bottom: var(--spacing-6);
 }
 
@@ -125,7 +125,7 @@
 }
 
 .footer-links a {
-  color: var(--gray-400);
+  color: var(--gray-300);
   font-size: var(--font-size-sm);
   transition: all var(--transition-fast);
   position: relative;
@@ -179,7 +179,7 @@
 }
 
 .footer-contact a {
-  color: var(--gray-400);
+  color: var(--gray-300);
   transition: color var(--transition-fast);
 }
 
@@ -188,7 +188,7 @@
 }
 
 .footer-contact span:last-child {
-  color: var(--gray-400);
+  color: var(--gray-300);
   line-height: 1.6;
 }
 
@@ -210,7 +210,7 @@
 
 .footer-bottom p {
   font-size: var(--font-size-sm);
-  color: var(--gray-500);
+  color: var(--gray-400);
   margin-bottom: 0;
 }
 
@@ -221,7 +221,7 @@
 
 .footer-bottom-links a {
   font-size: var(--font-size-sm);
-  color: var(--gray-500);
+  color: var(--gray-400);
   transition: color var(--transition-fast);
 }
 

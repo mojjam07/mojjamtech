@@ -9,6 +9,35 @@ function Contact() {
     message: ''
   });
   
+  const [openFaqId, setOpenFaqId] = useState(null);
+  
+  const faqs = [
+    {
+      id: 1,
+      question: 'How do I apply for a program?',
+      answer: 'Visit our Programs page, choose the program that interests you, and click the "Enroll Now" button to start your application.'
+    },
+    {
+      id: 2,
+      question: 'What are the prerequisites?',
+      answer: 'Most programs require basic computer literacy and a passion for learning. Some advanced programs may require foundational programming knowledge.'
+    },
+    {
+      id: 3,
+      question: 'Do you offer scholarships?',
+      answer: 'Yes! We offer scholarships for deserving students. Contact us to learn more about our scholarship opportunities.'
+    },
+    {
+      id: 4,
+      question: 'How can I become a sponsor?',
+      answer: 'Visit our Sponsorship page to explore sponsorship options, or contact us directly to discuss custom partnership opportunities.'
+    }
+  ];
+  
+  const toggleFaq = (id) => {
+    setOpenFaqId(openFaqId === id ? null : id);
+  };
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -206,50 +235,51 @@ function Contact() {
             <p>Quick answers to common questions</p>
           </div>
           <div className="faq-grid">
-            <div className="faq-item fade-in">
-              <div className="faq-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10"/>
-                  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
-                  <path d="M12 17h.01"/>
-                </svg>
+            {faqs.map((faq) => (
+              <div 
+                key={faq.id} 
+                className={`faq-item fade-in ${openFaqId === faq.id ? 'open' : ''}`}
+              >
+                <button 
+                  className="faq-question" 
+                  onClick={() => toggleFaq(faq.id)}
+                  aria-expanded={openFaqId === faq.id}
+                >
+                  <div className="faq-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="10"/>
+                      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                      <path d="M12 17h.01"/>
+                    </svg>
+                  </div>
+                  <h4>{faq.question}</h4>
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="20" 
+                    height="20" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                    className="faq-chevron"
+                  >
+                    <path d="m6 9 6 6 6-6"/>
+                  </svg>
+                </button>
+                <div 
+                  className="faq-answer"
+                  style={{ 
+                    maxHeight: openFaqId === faq.id ? '200px' : '0',
+                    opacity: openFaqId === faq.id ? 1 : 0,
+                    paddingTop: openFaqId === faq.id ? 'var(--spacing-4)' : '0'
+                  }}
+                >
+                  <p>{faq.answer}</p>
+                </div>
               </div>
-              <h4>How do I apply for a program?</h4>
-              <p>Visit our Programs page, choose the program that interests you, and click the "Enroll Now" button to start your application.</p>
-            </div>
-            <div className="faq-item fade-in">
-              <div className="faq-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10"/>
-                  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
-                  <path d="M12 17h.01"/>
-                </svg>
-              </div>
-              <h4>What are the prerequisites?</h4>
-              <p>Most programs require basic computer literacy and a passion for learning. Some advanced programs may require foundational programming knowledge.</p>
-            </div>
-            <div className="faq-item fade-in">
-              <div className="faq-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10"/>
-                  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
-                  <path d="M12 17h.01"/>
-                </svg>
-              </div>
-              <h4>Do you offer scholarships?</h4>
-              <p>Yes! We offer scholarships for deserving students. Contact us to learn more about our scholarship opportunities.</p>
-            </div>
-            <div className="faq-item fade-in">
-              <div className="faq-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10"/>
-                  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
-                  <path d="M12 17h.01"/>
-                </svg>
-              </div>
-              <h4>How can I become a sponsor?</h4>
-              <p>Visit our Sponsorship page to explore sponsorship options, or contact us directly to discuss custom partnership opportunities.</p>
-            </div>
+            ))}
           </div>
         </div>
       </section>

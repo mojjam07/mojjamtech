@@ -352,14 +352,62 @@
   box-shadow: var(--shadow-lg);
 }
 
-/* Responsive */
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   RESPONSIVE STYLES
+   ======================================== */
+
+/* Tablet Landscape (1024px) */
 @media (max-width: 1024px) {
   .programs-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  
+  .services-split-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-10);
+  }
+  
+  .corporate-services-content {
+    text-align: center;
+  }
+  
+  .corporate-services-list {
+    align-items: center;
+  }
+  
+  .corp-service-item {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .cta-buttons {
+    justify-content: center;
+  }
+  
+  .corporate-services-image {
+    order: -1;
+  }
+  
+  .services-highlight-card {
+    max-width: 400px;
+  }
 }
 
+/* Tablet Portrait (768px) */
 @media (max-width: 768px) {
+  /* Page Header */
   .page-header {
     padding: var(--spacing-12) 0;
   }
@@ -372,14 +420,269 @@
     font-size: var(--font-size-lg);
   }
   
+  /* Programs Grid */
   .programs-grid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-6);
+  }
+  
+  /* Program Card */
+  .program-card .card-body {
+    padding: var(--spacing-5);
   }
   
   .program-header {
     flex-direction: column;
     text-align: center;
     gap: var(--spacing-3);
+    padding: var(--spacing-5);
+  }
+  
+  .program-header h3 {
+    font-size: var(--font-size-lg);
+  }
+  
+  /* Corporate Services */
+  .corporate-services-content h2 {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .corporate-services-content > p {
+    font-size: var(--font-size-base);
+  }
+  
+  .corp-service-item {
+    padding: var(--spacing-3);
+    gap: var(--spacing-3);
+  }
+  
+  .corp-service-icon {
+    font-size: 1.5rem;
+  }
+  
+  /* Services Highlight Card */
+  .services-highlight-card {
+    padding: var(--spacing-8);
+    max-width: 350px;
+  }
+  
+  .highlight-icon {
+    font-size: 3rem;
+  }
+  
+  .highlight-stats {
+    gap: var(--spacing-6);
+  }
+  
+  /* CTA Section */
+  .programs-cta h2 {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .programs-cta p {
+    font-size: var(--font-size-base);
+  }
+  
+  /* Section Padding */
+  .section {
+    padding: var(--spacing-12) 0;
+  }
+}
+
+/* Mobile Large (480px) */
+@media (max-width: 480px) {
+  /* Page Header */
+  .page-header {
+    padding: var(--spacing-10) 0;
+  }
+  
+  .page-header h1 {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .page-header p {
+    font-size: var(--font-size-base);
+  }
+  
+  /* Container */
+  .container {
+    padding: 0 var(--spacing-4);
+  }
+  
+  /* Section */
+  .section {
+    padding: var(--spacing-10) 0;
+  }
+  
+  /* Programs Grid */
+  .programs-grid {
+    gap: var(--spacing-5);
+  }
+  
+  /* Program Card */
+  .program-card .card-body {
+    padding: var(--spacing-4);
+  }
+  
+  .program-header {
+    padding: var(--spacing-4);
+  }
+  
+  .program-header h3 {
+    font-size: var(--font-size-base);
+  }
+  
+  .program-duration {
+    font-size: var(--font-size-xs);
+    padding: var(--spacing-1) var(--spacing-2);
+  }
+  
+  .program-description {
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-4);
+  }
+  
+  .program-skills {
+    margin-bottom: var(--spacing-4);
+  }
+  
+  .program-skills h4,
+  .program-outcome h4 {
+    font-size: var(--font-size-xs);
+  }
+  
+  .program-outcome {
+    margin-bottom: var(--spacing-4);
+  }
+  
+  .program-outcome p {
+    font-size: var(--font-size-sm);
+  }
+  
+  /* Skills Tags */
+  .skills-tags {
+    gap: var(--spacing-1);
+  }
+  
+  .skill-tag {
+    padding: var(--spacing-1) var(--spacing-2);
+    font-size: 0.65rem;
+  }
+  
+  /* Feature Items */
+  .feature-item {
+    padding: var(--spacing-4);
+  }
+  
+  .feature-icon {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-3);
+  }
+  
+  .feature-item h4 {
+    font-size: var(--font-size-base);
+  }
+  
+  .feature-item p {
+    font-size: var(--font-size-xs);
+  }
+  
+  /* Corporate Services */
+  .services-badge {
+    font-size: var(--font-size-xs);
+    padding: var(--spacing-1) var(--spacing-3);
+  }
+  
+  .corporate-services-content h2 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-3);
+  }
+  
+  .corporate-services-content > p {
+    margin-bottom: var(--spacing-6);
+    line-height: 1.6;
+  }
+  
+  .corporate-services-list {
+    gap: var(--spacing-4);
+    margin-bottom: var(--spacing-6);
+  }
+  
+  .corp-service-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--spacing-4);
+  }
+  
+  .corp-service-item h4 {
+    font-size: var(--font-size-sm);
+  }
+  
+  .corp-service-item p {
+    font-size: var(--font-size-xs);
+  }
+  
+  /* CTA Buttons */
+  .cta-buttons {
+    flex-direction: column;
+    gap: var(--spacing-3);
+  }
+  
+  .cta-buttons .btn {
+    width: 100%;
+  }
+  
+  .btn-lg {
+    padding: var(--spacing-3) var(--spacing-6);
+    font-size: var(--font-size-base);
+  }
+  
+  /* Services Highlight Card */
+  .services-highlight-card {
+    padding: var(--spacing-6);
+    max-width: 300px;
+  }
+  
+  .highlight-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-3);
+  }
+  
+  .services-highlight-card h3 {
+    font-size: var(--font-size-lg);
+  }
+  
+  .services-highlight-card p {
+    font-size: var(--font-size-sm);
+  }
+  
+  .highlight-stats {
+    gap: var(--spacing-4);
+    padding-top: var(--spacing-4);
+  }
+  
+  .stat-number {
+    font-size: var(--font-size-xl);
+  }
+  
+  .stat-label {
+    font-size: var(--font-size-xs);
+  }
+  
+  /* Programs CTA */
+  .programs-cta h2 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-3);
+  }
+  
+  .programs-cta p {
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-5);
+  }
+  
+  .programs-cta .btn-secondary {
+    width: 100%;
   }
 }
 
