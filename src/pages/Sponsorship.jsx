@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Sponsorship.css';
 
 function Sponsorship() {
@@ -120,6 +121,50 @@ function Sponsorship() {
               <div className="benefit-icon">🤝</div>
               <h3>CSR Impact</h3>
               <p>Demonstrate your commitment to social responsibility and community development through meaningful action.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Services for Sponsors Section */}
+      <section className="sponsor-services section">
+        <div className="container">
+          <div className="sponsor-services-grid">
+            <div className="sponsor-services-content">
+              <div className="services-badge">Bonus for Sponsors</div>
+              <h2>Need Tech Solutions for Your Business?</h2>
+              <p>As a sponsor, you also get access to our professional tech services at preferential rates. We offer custom software development, digital transformation, and data analytics solutions.</p>
+              <div className="sponsor-services-list">
+                <div className="sponsor-service-item">
+                  <span className="sponsor-service-icon">💻</span>
+                  <span>Custom Software Development</span>
+                </div>
+                <div className="sponsor-service-item">
+                  <span className="sponsor-service-icon">🚀</span>
+                  <span>Digital Transformation</span>
+                </div>
+                <div className="sponsor-service-item">
+                  <span className="sponsor-service-icon">📊</span>
+                  <span>Data Analytics & AI</span>
+                </div>
+              </div>
+              <div className="cta-buttons">
+                <Link to="/services" className="btn btn-primary btn-lg">Explore Our Services</Link>
+                <Link to="/contact" className="btn btn-outline btn-lg">Contact Us</Link>
+              </div>
+            </div>
+            <div className="sponsor-services-image">
+              <div className="sponsor-services-card">
+                <div className="sponsor-card-icon">🛠️</div>
+                <h3>Tech Services</h3>
+                <p>Special rates for our sponsors and partners</p>
+                <ul className="sponsor-card-features">
+                  <li>Priority development timeline</li>
+                  <li>Dedicated support team</li>
+                  <li>Flexible engagement models</li>
+                </ul>
+                <Link to="/services" className="btn btn-secondary">Learn More</Link>
+              </div>
             </div>
           </div>
         </div>

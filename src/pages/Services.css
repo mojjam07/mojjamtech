@@ -1,0 +1,216 @@
+/* Services Page Styles */
+.services {
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.services-hero {
+  background: var(--gradient-hero);
+  color: var(--white);
+  padding: var(--spacing-20) 0;
+  text-align: center;
+}
+
+.services-hero .hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.services-hero .hero-title {
+  font-size: var(--font-size-5xl);
+  font-weight: 700;
+  margin-bottom: var(--spacing-4);
+  background: linear-gradient(135deg, var(--white) 0%, rgba(255, 255, 255, 0.8) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.services-hero .hero-subtitle {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-8);
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* Services Overview */
+.services-overview {
+  padding: var(--spacing-20) 0;
+  background: var(--gray-50);
+}
+
+.service-card {
+  padding: var(--spacing-8);
+  border-radius: var(--radius-xl);
+  text-align: center;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.service-card .card-icon {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-4);
+}
+
+.service-card h3 {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--spacing-4);
+  color: var(--gray-800);
+}
+
+.service-card p {
+  color: var(--gray-600);
+  margin-bottom: var(--spacing-6);
+  line-height: 1.6;
+}
+
+.service-features {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.service-features li {
+  padding: var(--spacing-2) 0;
+  border-bottom: 1px solid var(--gray-200);
+  color: var(--gray-700);
+}
+
+.service-features li:last-child {
+  border-bottom: none;
+}
+
+/* Glass Card Effect */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-glass);
+}
+
+/* Process Section */
+.process {
+  padding: var(--spacing-20) 0;
+  background: var(--white);
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-8);
+  margin-top: var(--spacing-12);
+}
+
+.process-step {
+  text-align: center;
+  padding: var(--spacing-6);
+  background: var(--gray-50);
+  border-radius: var(--radius-lg);
+  position: relative;
+}
+
+.process-step::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: var(--gradient-primary);
+  opacity: 0.3;
+}
+
+.process-step .step-number {
+  width: 60px;
+  height: 60px;
+  background: var(--gradient-primary);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  margin: 0 auto var(--spacing-4);
+  box-shadow: var(--shadow-lg);
+}
+
+.process-step h3 {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-4);
+  color: var(--gray-800);
+}
+
+.process-step p {
+  color: var(--gray-600);
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.services-cta {
+  background: var(--gradient-secondary);
+  color: var(--white);
+  padding: var(--spacing-20) 0;
+  text-align: center;
+}
+
+.services-cta .cta-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.services-cta h2 {
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--spacing-4);
+}
+
+.services-cta p {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-8);
+  opacity: 0.9;
+}
+
+.services-cta .cta-buttons {
+  display: flex;
+  gap: var(--spacing-4);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .services-hero {
+    padding: var(--spacing-12) 0;
+  }
+
+  .services-hero .hero-title {
+    font-size: var(--font-size-4xl);
+  }
+
+  .services-overview,
+  .process,
+  .services-cta {
+    padding: var(--spacing-12) 0;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .services-cta .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}

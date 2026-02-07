@@ -150,6 +150,151 @@
   margin-bottom: 0;
 }
 
+/* Sponsor Services Section */
+.sponsor-services {
+  background-color: var(--gray-50);
+}
+
+.sponsor-services-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--spacing-12);
+  align-items: center;
+}
+
+.sponsor-services-content .services-badge {
+  background: var(--gradient-primary);
+}
+
+.sponsor-services-content h2 {
+  font-size: var(--font-size-3xl);
+  color: var(--gray-900);
+  margin-bottom: var(--spacing-4);
+}
+
+.sponsor-services-content > p {
+  color: var(--gray-600);
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-8);
+  line-height: 1.7;
+}
+
+.sponsor-services-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-8);
+}
+
+.sponsor-service-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-3) var(--spacing-5);
+  background: var(--white);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+}
+
+.sponsor-service-icon {
+  font-size: 1.25rem;
+}
+
+.sponsor-service-item span:last-child {
+  font-weight: 500;
+  color: var(--gray-700);
+  font-size: var(--font-size-sm);
+}
+
+.sponsor-services-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sponsor-services-card {
+  background: var(--gradient-hero);
+  color: var(--white);
+  padding: var(--spacing-10);
+  border-radius: var(--radius-xl);
+  text-align: center;
+  max-width: 360px;
+  box-shadow: var(--shadow-xl);
+}
+
+.sponsor-card-icon {
+  font-size: 4rem;
+  margin-bottom: var(--spacing-4);
+}
+
+.sponsor-services-card h3 {
+  font-size: var(--font-size-2xl);
+  color: var(--white);
+  margin-bottom: var(--spacing-3);
+}
+
+.sponsor-services-card p {
+  font-size: var(--font-size-base);
+  opacity: 0.9;
+  margin-bottom: var(--spacing-6);
+}
+
+.sponsor-card-features {
+  list-style: none;
+  margin-bottom: var(--spacing-6);
+  text-align: left;
+}
+
+.sponsor-card-features li {
+  padding: var(--spacing-2) 0;
+  padding-left: var(--spacing-6);
+  position: relative;
+  font-size: var(--font-size-sm);
+  opacity: 0.9;
+}
+
+.sponsor-card-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--white);
+  font-weight: bold;
+}
+
+.sponsor-services-card .btn-secondary {
+  background: var(--white);
+  color: var(--primary-color);
+  padding: var(--spacing-3) var(--spacing-6);
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+  border: none;
+}
+
+.sponsor-services-card .btn-secondary:hover {
+  background: var(--gray-100);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  color: var(--primary-color);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: var(--spacing-4);
+  flex-wrap: wrap;
+}
+
+.sponsor-services-content .btn-outline {
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  background: transparent;
+}
+
+.sponsor-services-content .btn-outline:hover {
+  background: var(--primary-color);
+  color: var(--white);
+}
+
 /* Sponsorship CTA Section */
 .sponsorship-cta {
   background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-dark) 100%);

@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Programs from './pages/Programs';
+import Services from './pages/Services';
 import Sponsorship from './pages/Sponsorship';
 import Contact from './pages/Contact';
 import AdminLogin from './admin/pages/AdminLogin';
@@ -41,6 +42,15 @@ function App() {
               <Header />
               <main className="main-content">
                 <Programs />
+              </main>
+              <Footer />
+            </>
+          } />
+          <Route path="/services" element={
+            <>
+              <Header />
+              <main className="main-content">
+                <Services />
               </main>
               <Footer />
             </>

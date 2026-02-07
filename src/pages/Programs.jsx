@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Programs.css';
 
 function Programs() {
@@ -100,6 +101,63 @@ function Programs() {
               <div className="feature-icon">🎯</div>
               <h4>Career Support</h4>
               <p>Resume reviews, interview prep, and job placement assistance</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Corporate Services Section */}
+      <section className="corporate-services section">
+        <div className="container">
+          <div className="services-split-grid">
+            <div className="corporate-services-content">
+              <div className="services-badge">For Companies</div>
+              <h2>Need Custom Tech Solutions?</h2>
+              <p>Beyond training, we offer professional software development services to help businesses build innovative solutions. Our experienced team delivers high-quality results tailored to your needs.</p>
+              <div className="corporate-services-list">
+                <div className="corp-service-item">
+                  <span className="corp-service-icon">💻</span>
+                  <div>
+                    <h4>Custom Software Development</h4>
+                    <p>Web and mobile applications built to your specifications</p>
+                  </div>
+                </div>
+                <div className="corp-service-item">
+                  <span className="corp-service-icon">🚀</span>
+                  <div>
+                    <h4>Digital Transformation</h4>
+                    <p>Modernize your business with cutting-edge solutions</p>
+                  </div>
+                </div>
+                <div className="corp-service-item">
+                  <span className="corp-service-icon">📊</span>
+                  <div>
+                    <h4>Data Analytics & AI</h4>
+                    <p>Insights-driven decisions powered by advanced analytics</p>
+                  </div>
+                </div>
+              </div>
+              <div className="cta-buttons">
+                <Link to="/services" className="btn btn-primary btn-lg">Our Services</Link>
+                <Link to="/contact" className="btn btn-outline btn-lg">Get in Touch</Link>
+              </div>
+            </div>
+            <div className="corporate-services-image">
+              <div className="services-highlight-card">
+                <div className="highlight-icon">🛠️</div>
+                <h3>Professional Services</h3>
+                <p>From startups to enterprises, we deliver results that matter.</p>
+                <div className="highlight-stats">
+                  <div className="highlight-stat">
+                    <span className="stat-number">50+</span>
+                    <span className="stat-label">Projects Completed</span>
+                  </div>
+                  <div className="highlight-stat">
+                    <span className="stat-number">98%</span>
+                    <span className="stat-label">Client Satisfaction</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

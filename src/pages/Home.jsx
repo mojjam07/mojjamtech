@@ -42,6 +42,7 @@ function Home() {
               <div className="card-icon">💼</div>
               <h3>Tech Services</h3>
               <p>Real-world projects services that build branded software solutions for companies and organizations.</p>
+              <Link to="/services" className="card-link">Learn More →</Link>
             </div>
           </div>
         </div>
@@ -90,6 +91,44 @@ function Home() {
             </div>
             <div className="partner-logo">
               <img src="/vite.svg" alt="Partner 4" />
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Services CTA Section */}
+      <section className="home-services-cta section">
+        <div className="container">
+          <div className="services-cta-grid">
+            <div className="services-cta-content">
+              <h2>Need Professional Tech Solutions?</h2>
+              <p>We offer comprehensive software development, digital transformation, and data analytics services to help your business grow and innovate.</p>
+              <div className="services-cta-features">
+                <div className="cta-feature">
+                  <span className="cta-feature-icon">💻</span>
+                  <span>Custom Software Development</span>
+                </div>
+                <div className="cta-feature">
+                  <span className="cta-feature-icon">🚀</span>
+                  <span>Digital Transformation</span>
+                </div>
+                <div className="cta-feature">
+                  <span className="cta-feature-icon">📊</span>
+                  <span>Data Analytics & AI</span>
+                </div>
+              </div>
+              <div className="cta-buttons">
+                <Link to="/services" className="btn btn-primary btn-lg">View Our Services</Link>
+                <Link to="/contact" className="btn btn-outline btn-lg">Contact Us</Link>
+              </div>
+            </div>
+            <div className="services-cta-image">
+              <div className="services-cta-card">
+                <div className="cta-card-icon">🛠️</div>
+                <h3>Our Services</h3>
+                <p>From startups to enterprises, we deliver cutting-edge solutions that drive results.</p>
+                <Link to="/services" className="btn btn-secondary">Learn More</Link>
+              </div>
             </div>
           </div>
         </div>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './About.css';
 
 function About() {
@@ -79,6 +80,36 @@ function About() {
               <h3>Impact</h3>
               <p>We're driven by the positive change we create in people's lives. Every 
               trainee's success is our success.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Our Services Section */}
+      <section className="about-services section">
+        <div className="container">
+          <div className="section-title">
+            <h2>Our Services</h2>
+            <p>Professional tech solutions for businesses and organizations</p>
+          </div>
+          <div className="grid grid-3">
+            <div className="card about-service-card">
+              <div className="about-service-icon">💻</div>
+              <h3>Custom Software Development</h3>
+              <p>End-to-end development of web and mobile applications using modern technologies and best practices.</p>
+              <Link to="/services" className="about-service-link">Learn More →</Link>
+            </div>
+            <div className="card about-service-card">
+              <div className="about-service-icon">🚀</div>
+              <h3>Digital Transformation</h3>
+              <p>Modernize your business processes with innovative digital solutions and automation.</p>
+              <Link to="/services" className="about-service-link">Learn More →</Link>
+            </div>
+            <div className="card about-service-card">
+              <div className="about-service-icon">📊</div>
+              <h3>Data Analytics & AI</h3>
+              <p>Leverage data-driven insights and AI capabilities to make informed business decisions.</p>
+              <Link to="/services" className="about-service-link">Learn More →</Link>
             </div>
           </div>
         </div>
