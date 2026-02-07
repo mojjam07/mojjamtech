@@ -62,6 +62,16 @@
   flex-wrap: wrap;
 }
 
+.hero-buttons .btn-primary {
+  background-color: var(--white);
+  color: var(--primary-color);
+}
+
+.hero-buttons .btn-primary:hover {
+  background-color: var(--gray-100);
+}
+
+
 /* What We Do Section */
 .what-we-do-card {
   text-align: center;
@@ -342,6 +352,7 @@
 
 .cta-section .btn-primary:hover {
   background-color: var(--gray-100);
+
 }
 
 .cta-section .btn-secondary {

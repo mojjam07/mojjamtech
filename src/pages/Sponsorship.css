@@ -295,6 +295,11 @@
   color: var(--white);
 }
 
+.sponsor-services-content .btn-primary:hover {
+  background-color: var(--primary-dark);
+  color: var(--white);
+}
+
 /* Sponsorship CTA Section */
 .sponsorship-cta {
   background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-dark) 100%);
@@ -325,6 +330,7 @@
 
 .sponsorship-cta .btn-primary:hover {
   background-color: var(--gray-100);
+  color: var(--accent-dark);
 }
 
 /* Responsive */
