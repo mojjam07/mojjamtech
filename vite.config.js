@@ -7,4 +7,5 @@ export default defineConfig({
   server: {
     historyApiFallback: true,
   },
+  appType: 'spa',
 })
