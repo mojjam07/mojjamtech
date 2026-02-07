@@ -71,6 +71,10 @@
   background-color: var(--gray-100);
 }
 
+.hero-buttons .btn-outline {
+  color: var(--white);
+}
+
 
 /* What We Do Section */
 .what-we-do-card {
@@ -227,6 +231,10 @@
   flex-direction: column;
   gap: var(--spacing-4);
   margin-bottom: var(--spacing-8);
+}
+
+.cta-buttons .btn-primary:hover {
+  color: var(--white);
 }
 
 .cta-feature {
