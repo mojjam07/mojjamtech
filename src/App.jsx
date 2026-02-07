@@ -7,6 +7,7 @@ import Programs from './pages/Programs';
 import Services from './pages/Services';
 import Sponsorship from './pages/Sponsorship';
 import Contact from './pages/Contact';
+import NotFound from './pages/NotFound';
 import AdminLogin from './admin/pages/AdminLogin';
 import AdminDashboard from './admin/pages/AdminDashboard';
 import TraineeManagement from './admin/pages/TraineeManagement';
@@ -79,6 +80,17 @@ function App() {
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/admin/trainees" element={<TraineeManagement />} />
           <Route path="/admin/programs" element={<ProgramManagement />} />
+
+          {/* 404 Not Found */}
+          <Route path="*" element={
+            <>
+              <Header />
+              <main className="main-content">
+                <NotFound />
+              </main>
+              <Footer />
+            </>
+          } />
         </Routes>
       </div>
     </Router>

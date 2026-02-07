@@ -334,12 +334,112 @@
 }
 
 /* Responsive */
+
+/* Tablet Landscape */
 @media (max-width: 1024px) {
   .option-card.featured {
     transform: scale(1);
   }
+  
+  .sponsor-services-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-8);
+  }
+  
+  .sponsor-services-content {
+    text-align: center;
+  }
+  
+  .sponsor-services-list {
+    justify-content: center;
+  }
+  
+  .cta-buttons {
+    justify-content: center;
+  }
+  
+  .sponsor-services-image {
+    order: -1;
+  }
 }
 
+/* Tablet Portrait */
+@media (max-width: 900px) {
+  .page-header {
+    padding: var(--spacing-14) 0;
+  }
+  
+  .page-header h1 {
+    font-size: var(--font-size-4xl);
+  }
+  
+  .page-header p {
+    font-size: var(--font-size-xl);
+  }
+  
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-5);
+  }
+  
+  .option-card {
+    padding: 0;
+  }
+  
+  .option-header {
+    padding: var(--spacing-5);
+  }
+  
+  .option-header h3 {
+    font-size: var(--font-size-lg);
+  }
+  
+  .option-description {
+    font-size: var(--font-size-xs);
+  }
+  
+  .option-features {
+    margin-bottom: var(--spacing-4);
+  }
+  
+  .option-features li {
+    font-size: var(--font-size-xs);
+    padding: var(--spacing-1) 0;
+    padding-left: var(--spacing-5);
+  }
+  
+  .card-body {
+    padding: var(--spacing-4);
+  }
+  
+  .sponsor-services-content h2 {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .sponsor-services-content > p {
+    font-size: var(--font-size-base);
+  }
+  
+  .sponsor-services-card {
+    max-width: 100%;
+    padding: var(--spacing-8);
+  }
+  
+  .sponsor-card-icon {
+    font-size: 3rem;
+  }
+  
+  .sponsor-services-card h3 {
+    font-size: var(--font-size-xl);
+  }
+  
+  .option-badge {
+    font-size: var(--font-size-xs);
+    padding: var(--spacing-1) var(--spacing-3);
+  }
+}
+
+/* Mobile Landscape */
 @media (max-width: 768px) {
   .page-header {
     padding: var(--spacing-12) 0;
@@ -351,6 +451,326 @@
   
   .page-header p {
     font-size: var(--font-size-lg);
+  }
+  
+  .section {
+    padding: var(--spacing-10) 0;
+  }
+  
+  .section-title {
+    margin-bottom: var(--spacing-8);
+  }
+  
+  .section-title h2 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-3);
+  }
+  
+  .section-title p {
+    font-size: var(--font-size-sm);
+  }
+  
+  .grid-3 {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-5);
+  }
+  
+  .reason-card {
+    padding: var(--spacing-6);
+  }
+  
+  .reason-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-3);
+  }
+  
+  .reason-card h3 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-2);
+  }
+  
+  .reason-card p {
+    font-size: var(--font-size-sm);
+  }
+  
+  .option-card {
+    border-radius: var(--radius-lg);
+  }
+  
+  .option-header {
+    padding: var(--spacing-4);
+  }
+  
+  .option-header h3 {
+    font-size: var(--font-size-lg);
+  }
+  
+  .card-body {
+    padding: var(--spacing-4);
+  }
+  
+  .option-features {
+    margin-bottom: var(--spacing-4);
+  }
+  
+  .option-features li {
+    font-size: var(--font-size-sm);
+  }
+  
+  .benefit-item {
+    padding: var(--spacing-4);
+  }
+  
+  .benefit-icon {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-3);
+  }
+  
+  .benefit-item h3 {
+    font-size: var(--font-size-lg);
+  }
+  
+  .benefit-item p {
+    font-size: var(--font-size-sm);
+  }
+  
+  .sponsor-services {
+    padding: var(--spacing-10) 0;
+  }
+  
+  .sponsor-services-content h2 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-3);
+  }
+  
+  .sponsor-services-content > p {
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-6);
+    line-height: 1.6;
+  }
+  
+  .sponsor-services-list {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-3);
+    margin-bottom: var(--spacing-6);
+  }
+  
+  .sponsor-service-item {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-3);
+  }
+  
+  .cta-buttons .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  .sponsor-services-card {
+    padding: var(--spacing-6);
+    border-radius: var(--radius-lg);
+  }
+  
+  .sponsor-card-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-3);
+  }
+  
+  .sponsor-services-card h3 {
+    font-size: var(--font-size-xl);
+  }
+  
+  .sponsor-card-features {
+    margin-bottom: var(--spacing-4);
+  }
+  
+  .sponsor-card-features li {
+    font-size: var(--font-size-xs);
+    padding: var(--spacing-1) 0;
+    padding-left: var(--spacing-5);
+  }
+  
+  .sponsorship-cta {
+    padding: var(--spacing-10) 0;
+  }
+  
+  .sponsorship-cta h2 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-3);
+  }
+  
+  .sponsorship-cta p {
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-5);
+  }
+  
+  .sponsorship-cta .btn-lg {
+    padding: var(--spacing-3) var(--spacing-6);
+    font-size: var(--font-size-base);
+  }
+}
+
+/* Mobile Portrait */
+@media (max-width: 480px) {
+  .page-header {
+    padding: var(--spacing-10) 0;
+  }
+  
+  .page-header h1 {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .page-header p {
+    font-size: var(--font-size-base);
+  }
+  
+  .section {
+    padding: var(--spacing-8) 0;
+  }
+  
+  .section-title {
+    margin-bottom: var(--spacing-6);
+  }
+  
+  .section-title h2 {
+    font-size: var(--font-size-xl);
+  }
+  
+  .section-title p {
+    font-size: var(--font-size-xs);
+  }
+  
+  .reason-card {
+    padding: var(--spacing-5);
+  }
+  
+  .reason-icon {
+    font-size: 2rem;
+  }
+  
+  .reason-card h3 {
+    font-size: var(--font-size-base);
+  }
+  
+  .reason-card p {
+    font-size: var(--font-size-xs);
+  }
+  
+  .option-card {
+    margin-bottom: var(--spacing-4);
+  }
+  
+  .option-header h3 {
+    font-size: var(--font-size-base);
+  }
+  
+  .option-description {
+    font-size: var(--font-size-xs);
+  }
+  
+  .option-features li {
+    font-size: var(--font-size-xs);
+    padding-left: var(--spacing-5);
+  }
+  
+  .card-body {
+    padding: var(--spacing-3);
+  }
+  
+  .btn-block {
+    width: 100%;
+  }
+  
+  .benefit-item {
+    padding: var(--spacing-3);
+  }
+  
+  .benefit-icon {
+    font-size: 1.75rem;
+  }
+  
+  .benefit-item h3 {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--spacing-2);
+  }
+  
+  .benefit-item p {
+    font-size: var(--font-size-xs);
+  }
+  
+  .sponsor-services {
+    padding: var(--spacing-8) 0;
+  }
+  
+  .sponsor-services-content .services-badge {
+    font-size: var(--font-size-xs);
+    padding: var(--spacing-1) var(--spacing-3);
+  }
+  
+  .sponsor-services-content h2 {
+    font-size: var(--font-size-xl);
+  }
+  
+  .sponsor-services-content > p {
+    font-size: var(--font-size-sm);
+  }
+  
+  .sponsor-service-item {
+    padding: var(--spacing-2) var(--spacing-4);
+  }
+  
+  .sponsor-service-icon {
+    font-size: 1rem;
+  }
+  
+  .sponsor-service-item span:last-child {
+    font-size: var(--font-size-xs);
+  }
+  
+  .cta-buttons .btn-lg {
+    padding: var(--spacing-3) var(--spacing-5);
+    font-size: var(--font-size-sm);
+  }
+  
+  .sponsor-services-card {
+    padding: var(--spacing-5);
+  }
+  
+  .sponsor-card-icon {
+    font-size: 2rem;
+  }
+  
+  .sponsor-services-card h3 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-2);
+  }
+  
+  .sponsor-services-card p {
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-4);
+  }
+  
+  .sponsor-card-features li {
+    font-size: var(--font-size-xs);
+  }
+  
+  .sponsorship-cta {
+    padding: var(--spacing-8) 0;
+  }
+  
+  .sponsorship-cta h2 {
+    font-size: var(--font-size-xl);
+  }
+  
+  .sponsorship-cta p {
+    font-size: var(--font-size-sm);
   }
 }
 
