@@ -13,7 +13,7 @@ function Home() {
               We provide comprehensive training, mentorship, to help aspiring developers build successful careers in technology, and we also provide tech services that help companies build software solutions.
             </p>
             <div className="hero-buttons">
-              <Link to="/sponsorship" className="btn btn-primary btn-lg">Become a Sponsor</Link>
+              <Link to="/sponsorship" style={{color: ''}} className="btn btn-primary btn-lg">Become a Sponsor</Link>
               <Link to="/programs" className="btn btn-outline btn-lg">View Programs</Link>
             </div>
           </div>

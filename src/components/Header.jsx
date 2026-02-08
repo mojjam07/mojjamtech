@@ -100,8 +100,17 @@ function Header() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link 
-                  to="/contact" 
+                <Link
+                  to="/gallery"
+                  className={`nav-link ${location.pathname === '/gallery' ? 'active' : ''}`}
+                >
+                  Gallery
+                  {location.pathname === '/gallery' && <span className="nav-indicator"></span>}
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  to="/contact"
                   className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}
                 >
                   Contact
@@ -204,8 +213,18 @@ function Header() {
                   </Link>
                 </li>
                 <li className="nav-mobile-item">
-                  <Link 
-                    to="/contact" 
+                  <Link
+                    to="/gallery"
+                    className={`nav-mobile-link ${location.pathname === '/gallery' ? 'active' : ''}`}
+                  >
+                    <span className="nav-mobile-icon">🖼️</span>
+                    Gallery
+                    {location.pathname === '/gallery' && <span className="nav-mobile-indicator"></span>}
+                  </Link>
+                </li>
+                <li className="nav-mobile-item">
+                  <Link
+                    to="/contact"
                     className={`nav-mobile-link ${location.pathname === '/contact' ? 'active' : ''}`}
                   >
                     <span className="nav-mobile-icon">✉️</span>

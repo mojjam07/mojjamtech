@@ -7,6 +7,7 @@ import Programs from './pages/Programs';
 import Services from './pages/Services';
 import Sponsorship from './pages/Sponsorship';
 import Contact from './pages/Contact';
+import Gallery from './pages/Gallery';
 import NotFound from './pages/NotFound';
 import AdminLogin from './admin/pages/AdminLogin';
 import AdminDashboard from './admin/pages/AdminDashboard';
@@ -74,7 +75,16 @@ function App() {
               <Footer />
             </>
           } />
-          
+          <Route path="/gallery" element={
+            <>
+              <Header />
+              <main className="main-content">
+                <Gallery />
+              </main>
+              <Footer />
+            </>
+          } />
+
           {/* Admin Routes */}
           <Route path="/admin" element={<AdminLogin />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
