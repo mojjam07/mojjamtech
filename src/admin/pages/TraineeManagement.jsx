@@ -14,13 +14,23 @@ function TraineeManagement() {
     { id: 8, name: 'Amanda Taylor', email: 'amanda@example.com', program: 'Backend Development', status: 'Ongoing' }
   ]);
   
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  
   return (
     <div className="admin-layout">
-      <Sidebar />
+      <Sidebar isOpen={sidebarOpen} setIsOpen={setSidebarOpen} />
       
       <main className="admin-main">
         <header className="admin-header">
-          <h1>Trainees Management</h1>
+          <div className="header-left">
+            <button 
+              className="mobile-menu-btn"
+              onClick={() => setSidebarOpen(true)}
+            >
+              ☰
+            </button>
+            <h1>Trainees Management</h1>
+          </div>
           <div className="admin-user">
             <span className="user-name">Admin User</span>
             <div className="user-avatar">A</div>

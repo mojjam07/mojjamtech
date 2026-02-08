@@ -1,20 +1,43 @@
-import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useNavigate, Link, useLocation } from 'react-router-dom';
+import { useAuth } from '../../contexts/AuthContext';
 import '../AdminLogin.css';
 
 function AdminLogin() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { login, user } = useAuth();
   const navigate = useNavigate();
-  
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Simple mock login for MVP
-    if (email && password) {
-      // In a real app, this would validate credentials with the backend
-      console.log('Login attempt:', { email, password });
-      navigate('/admin/dashboard');
+  const location = useLocation();
+
+  // Redirect if already logged in
+  useEffect(() => {
+    if (user) {
+      const from = location.state?.from?.pathname || '/admin/dashboard';
+      navigate(from, { replace: true });
     }
+  }, [user, navigate, location]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
+    setIsSubmitting(true);
+
+    // Simulate a small delay for better UX
+    await new Promise(resolve => setTimeout(resolve, 500));
+
+    const result = login(email, password);
+    
+    if (result.success) {
+      const from = location.state?.from?.pathname || '/admin/dashboard';
+      navigate(from, { replace: true });
+    } else {
+      setError(result.error);
+    }
+    
+    setIsSubmitting(false);
   };
   
   return (
@@ -27,6 +50,12 @@ function AdminLogin() {
             <p>Enter your credentials to access the dashboard</p>
           </div>
           
+          {error && (
+            <div className="error-message">
+              {error}
+            </div>
+          )}
+          
           <form className="login-form" onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="email">Email</label>
@@ -35,7 +64,7 @@ function AdminLogin() {
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="admin@example.com"
+                placeholder="admin@mojjamtech.com"
                 required
               />
             </div>
@@ -52,8 +81,12 @@ function AdminLogin() {
               />
             </div>
             
-            <button type="submit" className="btn btn-primary btn-lg btn-block">
-              Login
+            <button 
+              type="submit" 
+              className="btn btn-primary btn-lg btn-block"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? 'Logging in...' : 'Login'}
             </button>
           </form>
           

@@ -1,6 +1,6 @@
 /* Trainee Management Styles */
 
-/* Admin Layout (shared) */
+/* Admin Layout */
 .admin-layout {
   display: flex;
   min-height: 100vh;
@@ -12,6 +12,7 @@
   margin-left: var(--sidebar-width);
   display: flex;
   flex-direction: column;
+  transition: margin-left var(--transition-base);
 }
 
 /* Admin Header */
@@ -25,6 +26,22 @@
   position: sticky;
   top: 0;
   z-index: 10;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: var(--spacing-2);
+  color: var(--gray-700);
 }
 
 .admin-header h1 {
@@ -161,7 +178,7 @@
   width: 36px;
   height: 36px;
   border-radius: var(--radius-full);
-  background-color: var(--primary-color);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
   color: var(--white);
   display: flex;
   align-items: center;
@@ -207,6 +224,8 @@
   align-items: center;
   padding-top: var(--spacing-4);
   border-top: 1px solid var(--gray-200);
+  flex-wrap: wrap;
+  gap: var(--spacing-4);
 }
 
 .pagination-info {
@@ -219,7 +238,54 @@
   gap: var(--spacing-2);
 }
 
-/* Responsive */
+/* Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-3) var(--spacing-6);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border: none;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--gray-300);
+  color: var(--gray-700);
+}
+
+.btn-outline:hover {
+  border-color: var(--primary-color);
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.btn-outline:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-sm {
+  padding: var(--spacing-2) var(--spacing-3);
+  font-size: var(--font-size-xs);
+}
+
+/* Responsive - Tablet */
 @media (max-width: 1024px) {
   .admin-main {
     margin-left: 0;
@@ -227,6 +293,10 @@
   
   .admin-content {
     padding: var(--spacing-6);
+  }
+  
+  .mobile-menu-btn {
+    display: block;
   }
   
   .actions-bar {
@@ -240,9 +310,11 @@
   
   .filter-buttons {
     flex-wrap: wrap;
+    justify-content: flex-start;
   }
 }
 
+/* Responsive - Mobile */
 @media (max-width: 768px) {
   .admin-header {
     padding: var(--spacing-4);
@@ -256,6 +328,11 @@
     padding: var(--spacing-4);
   }
   
+  .data-table th:nth-child(2),
+  .data-table td:nth-child(2) {
+    display: none;
+  }
+  
   .pagination {
     flex-direction: column;
     gap: var(--spacing-4);
@@ -264,6 +341,49 @@
   .pagination-buttons {
     width: 100%;
     justify-content: center;
+  }
+}
+
+/* Responsive - Small Mobile */
+@media (max-width: 480px) {
+  .admin-header {
+    padding: var(--spacing-3);
+  }
+  
+  .admin-header h1 {
+    font-size: var(--font-size-lg);
+  }
+  
+  .admin-content {
+    padding: var(--spacing-3);
+  }
+  
+  .trainees-section {
+    padding: var(--spacing-4);
+  }
+  
+  .data-table th,
+  .data-table td {
+    padding: var(--spacing-2);
+  }
+  
+  .trainee-name {
+    gap: var(--spacing-2);
+  }
+  
+  .name-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: var(--font-size-xs);
+  }
+  
+  .filter-select {
+    flex: 1;
+    min-width: 100px;
+  }
+  
+  .btn-primary {
+    width: 100%;
   }
 }
 
