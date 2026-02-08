@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import '../AdminLogin.css';
 
 function AdminLogin() {
@@ -58,7 +58,7 @@ function AdminLogin() {
           </form>
           
           <div className="login-footer">
-            <a href="/" className="back-link">← Back to Website</a>
+            <Link to="/" className="back-link">← Back to Website</Link>
           </div>
         </div>
       </div>
