@@ -1,6 +1,10 @@
+import { useState } from 'react';
 import './Gallery.css';
 
 function Gallery() {
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedAlbum, setSelectedAlbum] = useState(null);
+
   const albums = [
     {
       id: 1,
@@ -69,6 +73,16 @@ function Gallery() {
     }
   ];
 
+  const openModal = (image, album) => {
+    setSelectedImage(image);
+    setSelectedAlbum(album);
+  };
+
+  const closeModal = () => {
+    setSelectedImage(null);
+    setSelectedAlbum(null);
+  };
+
   return (
     <div className="gallery">
       {/* Page Header */}
@@ -90,34 +104,57 @@ function Gallery() {
                 <h2 className="album-title">{album.title}</h2>
                 <p className="album-description">{album.description}</p>
               </div>
-              <div className="album-grid">
-                {album.images.map(image => (
-                  <div key={image.id} className="gallery-item">
-                    <div className="gallery-image-container">
-                      <img src={image.src} alt={image.alt} className="gallery-image" />
-                      <div className="gallery-overlay">
-                        <p className="gallery-description">{image.description}</p>
-                        {image.demoUrl && (
-                          <a 
-                            href={image.demoUrl} 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-                            className="live-demo-link"
-                          >
-                            Live Demo
-                          </a>
-                        )}
+              <div className="album-card">
+                <div className="album-images-grid">
+                  {album.images.map(image => (
+                    <div 
+                      key={image.id} 
+                      className="gallery-thumbnail"
+                      onClick={() => openModal(image, album)}
+                    >
+                      <img src={image.src} alt={image.alt} className="gallery-thumbnail-image" />
+                      <div className="gallery-thumbnail-overlay">
+                        <span className="view-icon">🔍</span>
+                        <span className="view-text">View Details</span>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           ))}
         </div>
       </section>
+
+      {/* Image Modal */}
+      {selectedImage && selectedAlbum && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content" onClick={e => e.stopPropagation()}>
+            <button className="modal-close" onClick={closeModal}>×</button>
+            <div className="modal-image-container">
+              <img src={selectedImage.src} alt={selectedImage.alt} className="modal-image" />
+            </div>
+            <div className="modal-info">
+              <span className="modal-category">{selectedAlbum.title}</span>
+              <h3 className="modal-title">{selectedImage.alt}</h3>
+              <p className="modal-description">{selectedImage.description}</p>
+              {selectedImage.demoUrl && (
+                <a 
+                  href={selectedImage.demoUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="modal-demo-link"
+                >
+                  Live Demo →
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
 
 export default Gallery;
+
