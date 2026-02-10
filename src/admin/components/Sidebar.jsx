@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import './Sidebar.css';
@@ -13,10 +12,6 @@ function Sidebar({ isOpen, setIsOpen }) {
 
   const handleLogout = () => {
     logout();
-  };
-
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
   };
 
   const closeSidebar = () => {
@@ -82,15 +77,6 @@ function Sidebar({ isOpen, setIsOpen }) {
           </button>
         </div>
       </aside>
-
-      {/* Mobile Toggle Button */}
-      <button 
-        className={`sidebar-toggle ${isOpen ? 'hidden' : ''}`}
-        onClick={toggleSidebar}
-        aria-label="Toggle sidebar"
-      >
-        <span className="toggle-icon">☰</span>
-      </button>
     </>
   );
 }

@@ -26,6 +26,8 @@
   position: sticky;
   top: 0;
   z-index: 10;
+  flex-wrap: wrap;
+  gap: var(--spacing-3);
 }
 
 .header-left {
@@ -34,14 +36,33 @@
   gap: var(--spacing-4);
 }
 
-.mobile-menu-btn {
+.collapse-btn {
   display: none;
   background: none;
   border: none;
-  font-size: 1.5rem;
   cursor: pointer;
   padding: var(--spacing-2);
   color: var(--gray-700);
+  transition: all var(--transition-fast);
+}
+
+.collapse-btn:hover {
+  background-color: var(--gray-100);
+  border-radius: var(--radius-md);
+}
+
+.collapse-icon {
+  display: grid;
+  grid-template-columns: repeat(3, 4px);
+  grid-template-rows: repeat(3, 4px);
+  gap: 3px;
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  background-color: var(--gray-700);
+  border-radius: 1px;
 }
 
 .admin-header h1 {
@@ -89,12 +110,19 @@
   flex-wrap: wrap;
 }
 
+.search-box {
+  flex: 1;
+  max-width: 300px;
+  min-width: 200px;
+}
+
 .search-box input {
-  width: 300px;
+  width: 100%;
   padding: var(--spacing-3) var(--spacing-4);
   border: 1px solid var(--gray-300);
   border-radius: var(--radius-md);
   font-size: var(--font-size-sm);
+  min-height: 44px;
 }
 
 .search-box input:focus {
@@ -107,6 +135,7 @@
   display: flex;
   gap: var(--spacing-3);
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .filter-select {
@@ -116,6 +145,8 @@
   font-size: var(--font-size-sm);
   background-color: var(--white);
   cursor: pointer;
+  min-width: 140px;
+  min-height: 44px;
 }
 
 .filter-select:focus {
@@ -129,16 +160,19 @@
   border-radius: var(--radius-xl);
   padding: var(--spacing-6);
   box-shadow: var(--shadow-sm);
+  overflow: hidden;
 }
 
 .table-container {
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   margin-bottom: var(--spacing-6);
 }
 
 .data-table {
   width: 100%;
   border-collapse: collapse;
+  min-width: 600px;
 }
 
 .data-table th,
@@ -146,6 +180,7 @@
   padding: var(--spacing-4);
   text-align: left;
   border-bottom: 1px solid var(--gray-200);
+  white-space: nowrap;
 }
 
 .data-table th {
@@ -185,6 +220,7 @@
   justify-content: center;
   font-weight: 600;
   font-size: var(--font-size-sm);
+  flex-shrink: 0;
 }
 
 /* Status Badge */
@@ -215,6 +251,7 @@
 .action-buttons {
   display: flex;
   gap: var(--spacing-2);
+  flex-wrap: wrap;
 }
 
 /* Pagination */
@@ -236,6 +273,7 @@
 .pagination-buttons {
   display: flex;
   gap: var(--spacing-2);
+  flex-wrap: wrap;
 }
 
 /* Button Styles */
@@ -252,6 +290,7 @@
   transition: all var(--transition-fast);
   border: none;
   text-decoration: none;
+  min-height: 44px;
 }
 
 .btn-primary {
@@ -283,107 +322,213 @@
 .btn-sm {
   padding: var(--spacing-2) var(--spacing-3);
   font-size: var(--font-size-xs);
+  min-height: 36px;
 }
 
-/* Responsive - Tablet */
+/* Responsive - Tablet (1024px) */
 @media (max-width: 1024px) {
   .admin-main {
     margin-left: 0;
   }
-  
+
   .admin-content {
     padding: var(--spacing-6);
   }
-  
-  .mobile-menu-btn {
+
+  .collapse-btn {
     display: block;
   }
-  
+
   .actions-bar {
     flex-direction: column;
     align-items: stretch;
   }
-  
-  .search-box input {
+
+  .search-box {
+    max-width: 100%;
     width: 100%;
   }
-  
+
   .filter-buttons {
-    flex-wrap: wrap;
+    width: 100%;
     justify-content: flex-start;
+  }
+
+  .filter-select {
+    flex: 1;
+    min-width: 100px;
+  }
+
+  .btn-primary {
+    width: 100%;
   }
 }
 
-/* Responsive - Mobile */
+/* Responsive - Mobile (768px) */
 @media (max-width: 768px) {
   .admin-header {
-    padding: var(--spacing-4);
+    padding: var(--spacing-3) var(--spacing-4);
+    gap: var(--spacing-3);
   }
-  
+
   .admin-header h1 {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-lg);
+    width: 100%;
+    margin-top: var(--spacing-2);
   }
-  
+
+  .header-left {
+    gap: var(--spacing-3);
+  }
+
+  .admin-user {
+    margin-left: auto;
+  }
+
   .admin-content {
     padding: var(--spacing-4);
   }
-  
+
+  .trainees-section {
+    padding: var(--spacing-4);
+  }
+
   .data-table th:nth-child(2),
   .data-table td:nth-child(2) {
     display: none;
   }
-  
+
+  .data-table th,
+  .data-table td {
+    padding: var(--spacing-3) var(--spacing-2);
+  }
+
   .pagination {
     flex-direction: column;
     gap: var(--spacing-4);
   }
-  
+
+  .pagination-info {
+    text-align: center;
+    width: 100%;
+  }
+
   .pagination-buttons {
     width: 100%;
     justify-content: center;
+    flex-wrap: wrap;
   }
-}
 
-/* Responsive - Small Mobile */
-@media (max-width: 480px) {
-  .admin-header {
-    padding: var(--spacing-3);
-  }
-  
-  .admin-header h1 {
-    font-size: var(--font-size-lg);
-  }
-  
-  .admin-content {
-    padding: var(--spacing-3);
-  }
-  
-  .trainees-section {
-    padding: var(--spacing-4);
-  }
-  
-  .data-table th,
-  .data-table td {
-    padding: var(--spacing-2);
-  }
-  
-  .trainee-name {
+  .action-buttons {
+    flex-direction: column;
     gap: var(--spacing-2);
   }
-  
+
+  .action-buttons .btn {
+    width: 100%;
+  }
+
   .name-avatar {
     width: 32px;
     height: 32px;
     font-size: var(--font-size-xs);
   }
-  
-  .filter-select {
-    flex: 1;
-    min-width: 100px;
+}
+
+/* Responsive - Small Mobile (480px) */
+@media (max-width: 480px) {
+  .admin-header {
+    padding: var(--spacing-3);
   }
-  
+
+  .admin-header h1 {
+    font-size: var(--font-size-md);
+  }
+
+  .admin-content {
+    padding: var(--spacing-3);
+  }
+
+  .trainees-section {
+    padding: var(--spacing-3);
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: var(--spacing-2);
+    font-size: var(--font-size-xs);
+  }
+
+  .trainee-name {
+    gap: var(--spacing-2);
+  }
+
+  .filter-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .filter-select {
+    width: 100%;
+  }
+
   .btn-primary {
     width: 100%;
   }
+
+  .status-badge {
+    padding: var(--spacing-1) var(--spacing-2);
+    font-size: 10px;
+  }
+
+  .actions-bar {
+    gap: var(--spacing-3);
+  }
+
+  .collapse-icon {
+    transform: scale(0.8);
+  }
+
+  .header-left {
+    flex-direction: row;
+  }
+}
+
+/* Improve touch targets */
+@media (hover: none) and (pointer: coarse) {
+  .btn {
+    min-height: 48px;
+  }
+
+  .filter-select {
+    min-height: 48px;
+  }
+
+  .search-box input {
+    min-height: 48px;
+  }
+
+  .action-buttons .btn {
+    min-height: 48px;
+  }
+}
+
+/* Scrollbar styling for table container */
+.table-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: var(--gray-100);
+  border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: var(--gray-300);
+  border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-400);
 }
 

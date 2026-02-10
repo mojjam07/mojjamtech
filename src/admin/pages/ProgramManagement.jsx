@@ -21,10 +21,21 @@ function ProgramManagement() {
         <header className="admin-header">
           <div className="header-left">
             <button 
-              className="mobile-menu-btn"
+              className="collapse-btn"
               onClick={() => setSidebarOpen(true)}
+              aria-label="Toggle sidebar"
             >
-              ☰
+              <span className="collapse-icon">
+                <span className="dot"></span>
+                <span className="dot"></span>
+                <span className="dot"></span>
+                <span className="dot"></span>
+                <span className="dot"></span>
+                <span className="dot"></span>
+                <span className="dot"></span>
+                <span className="dot"></span>
+                <span className="dot"></span>
+              </span>
             </button>
             <h1>Programs Management</h1>
           </div>

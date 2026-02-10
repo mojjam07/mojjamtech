@@ -53,11 +53,22 @@ function AdminDashboard() {
       <main className="admin-main">
         <header className="admin-header">
           <div className="header-left">
-            <button 
-              className="mobile-menu-btn"
+            <button
+              className="collapse-btn"
               onClick={() => setSidebarOpen(true)}
+              aria-label="Toggle sidebar"
             >
-              ☰
+              <span className="collapse-icon">
+                <span className="dot"></span>
+                <span className="dot"></span>
+                <span className="dot"></span>
+                <span className="dot"></span>
+                <span className="dot"></span>
+                <span className="dot"></span>
+                <span className="dot"></span>
+                <span className="dot"></span>
+                <span className="dot"></span>
+              </span>
             </button>
             <h1>Dashboard Overview</h1>
           </div>

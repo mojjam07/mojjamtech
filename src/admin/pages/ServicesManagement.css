@@ -26,6 +26,8 @@
   position: sticky;
   top: 0;
   z-index: 10;
+  flex-wrap: wrap;
+  gap: var(--spacing-3);
 }
 
 .header-left {
@@ -34,14 +36,33 @@
   gap: var(--spacing-4);
 }
 
-.mobile-menu-btn {
+.collapse-btn {
   display: none;
   background: none;
   border: none;
-  font-size: 1.5rem;
   cursor: pointer;
   padding: var(--spacing-2);
   color: var(--gray-700);
+  transition: all var(--transition-fast);
+}
+
+.collapse-btn:hover {
+  background-color: var(--gray-100);
+  border-radius: var(--radius-md);
+}
+
+.collapse-icon {
+  display: grid;
+  grid-template-columns: repeat(3, 4px);
+  grid-template-rows: repeat(3, 4px);
+  gap: 3px;
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  background-color: var(--gray-700);
+  border-radius: 1px;
 }
 
 .admin-header h1 {
@@ -96,6 +117,8 @@
   padding: var(--spacing-2);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .filter-tab {
@@ -108,6 +131,8 @@
   border-radius: var(--radius-md);
   cursor: pointer;
   transition: all var(--transition-fast);
+  white-space: nowrap;
+  min-height: 44px;
 }
 
 .filter-tab:hover {
@@ -124,6 +149,7 @@
   display: flex;
   gap: var(--spacing-3);
   align-items: center;
+  flex-wrap: wrap;
 }
 
 /* Services Section */
@@ -193,6 +219,8 @@
 .service-body {
   padding: var(--spacing-5);
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .service-body h3 {
@@ -206,6 +234,7 @@
   font-size: var(--font-size-sm);
   line-height: 1.6;
   margin-bottom: var(--spacing-4);
+  flex-grow: 1;
 }
 
 .service-meta {
@@ -214,6 +243,7 @@
   margin-bottom: var(--spacing-4);
   padding-bottom: var(--spacing-4);
   border-bottom: 1px solid var(--gray-200);
+  flex-wrap: wrap;
 }
 
 .meta-item {
@@ -271,10 +301,12 @@
 .service-actions {
   display: flex;
   gap: var(--spacing-2);
+  flex-wrap: wrap;
 }
 
 .service-actions .btn {
   flex: 1;
+  min-width: 80px;
 }
 
 .service-stats {
@@ -353,6 +385,7 @@
   transition: all var(--transition-fast);
   border: none;
   text-decoration: none;
+  min-height: 44px;
 }
 
 .btn-primary {
@@ -379,11 +412,30 @@
 .btn-sm {
   padding: var(--spacing-2) var(--spacing-3);
   font-size: var(--font-size-xs);
+  min-height: 36px;
+}
+
+/* Responsive - Extra Large Desktop */
+@media (max-width: 1400px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-4);
+  }
+
+  .summary-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-3);
+  }
 }
 
 /* Responsive - Large Desktop */
-@media (max-width: 1280px) {
+@media (max-width: 1200px) {
   .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-4);
+  }
+
+  .summary-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -393,85 +445,153 @@
   .admin-main {
     margin-left: 0;
   }
-  
+
   .admin-content {
     padding: var(--spacing-6);
   }
-  
-  .mobile-menu-btn {
+
+  .collapse-btn {
     display: block;
   }
-  
+
   .filter-tabs {
     width: 100%;
     overflow-x: auto;
     flex-wrap: nowrap;
   }
-  
+
   .summary-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .actions-bar {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .services-grid {
+    gap: var(--spacing-4);
+  }
+
+  .service-card {
+    padding: var(--spacing-4);
+  }
+
+  .summary-card {
+    padding: var(--spacing-4);
+  }
+}
+
+/* Responsive - Small Tablet */
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-4);
+  }
+
+  .admin-header {
+    padding: var(--spacing-4) var(--spacing-4);
+  }
+
+  .admin-content {
+    padding: var(--spacing-4);
+  }
+
+  .service-header {
+    padding: var(--spacing-4);
+  }
+
+  .service-body {
+    padding: var(--spacing-4);
+  }
+
+  .service-footer {
+    padding: var(--spacing-3) var(--spacing-4);
   }
 }
 
 /* Responsive - Mobile */
 @media (max-width: 768px) {
   .admin-header {
-    padding: var(--spacing-4);
+    padding: var(--spacing-3) var(--spacing-4);
+    gap: var(--spacing-3);
   }
-  
+
   .admin-header h1 {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-lg);
+    width: 100%;
+    margin-top: var(--spacing-2);
   }
-  
+
+  .header-left {
+    gap: var(--spacing-3);
+  }
+
+  .admin-user {
+    margin-left: auto;
+  }
+
   .admin-content {
     padding: var(--spacing-4);
   }
-  
+
   .services-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .summary-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .service-header {
     padding: var(--spacing-4);
   }
-  
+
   .service-icon {
     font-size: 2rem;
   }
-  
+
   .service-body {
     padding: var(--spacing-4);
   }
-  
+
   .summary-card {
     padding: var(--spacing-4);
   }
-  
+
   .summary-icon {
     width: 48px;
     height: 48px;
     font-size: 1.5rem;
   }
-  
+
   .summary-value {
     font-size: var(--font-size-xl);
   }
-  
+
   .filter-buttons {
     width: 100%;
     flex-direction: column;
   }
-  
+
   .filter-buttons .btn {
+    width: 100%;
+  }
+
+  .service-meta {
+    flex-direction: column;
+    gap: var(--spacing-2);
+  }
+
+  .service-actions {
+    flex-direction: column;
+  }
+
+  .service-actions .btn {
     width: 100%;
   }
 }
@@ -481,32 +601,86 @@
   .admin-header {
     padding: var(--spacing-3);
   }
-  
+
   .admin-header h1 {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-md);
   }
-  
+
   .admin-content {
     padding: var(--spacing-3);
   }
-  
+
   .service-meta {
     flex-direction: column;
     gap: var(--spacing-2);
   }
-  
+
   .service-actions {
     flex-direction: column;
   }
-  
+
   .service-actions .btn {
     width: 100%;
   }
-  
+
   .filter-tab {
     padding: var(--spacing-2) var(--spacing-3);
     font-size: var(--font-size-xs);
     white-space: nowrap;
+  }
+
+  .service-card {
+    margin-bottom: var(--spacing-3);
+  }
+
+  .summary-card {
+    margin-bottom: var(--spacing-3);
+  }
+
+  .actions-bar {
+    gap: var(--spacing-3);
+  }
+
+  .header-left {
+    flex-direction: row;
+  }
+
+  .admin-user {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-1);
+  }
+
+  .user-name {
+    font-size: var(--font-size-sm);
+    display: none;
+  }
+
+  .collapse-icon {
+    transform: scale(0.8);
+  }
+}
+
+/* Improve touch targets */
+@media (hover: none) and (pointer: coarse) {
+  .btn {
+    min-height: 48px;
+  }
+
+  .filter-tab {
+    min-height: 48px;
+  }
+
+  .service-actions .btn {
+    min-height: 48px;
+  }
+
+  .service-card {
+    min-height: 44px;
+  }
+
+  .summary-card {
+    min-height: 44px;
   }
 }
 
