@@ -799,3 +799,133 @@ body.sidebar-open {
   }
 }
 
+/* =========================
+   EXTRA SMALL SCREENS FIX (≤480px)
+   ========================= */
+@media (max-width: 480px) {
+
+  /* Prevent horizontal scroll */
+  html, body {
+    overflow-x: hidden;
+  }
+
+  /* Layout reset */
+  .admin-layout {
+    flex-direction: column;
+  }
+
+  .admin-main {
+    margin-left: 0;
+  }
+
+  /* Header */
+  .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-left {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .admin-user {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Stats */
+  .stat-card-admin {
+    padding: var(--spacing-4);
+    gap: var(--spacing-2);
+  }
+
+  .stat-card-admin .stat-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.4rem;
+  }
+
+  .stat-card-admin .stat-value {
+    font-size: var(--font-size-lg);
+  }
+
+  /* Messages container */
+  .messages-container {
+    grid-template-columns: 1fr;
+  }
+
+  /* Messages list */
+  .messages-list {
+    max-height: 250px;
+    border-right: none;
+    border-bottom: 1px solid var(--gray-200);
+  }
+
+  .message-card {
+    padding: var(--spacing-3);
+  }
+
+  .message-header {
+    flex-wrap: wrap;
+  }
+
+  .priority-badge {
+    width: 100%;
+    text-align: center;
+    margin-top: var(--spacing-2);
+  }
+
+  /* Message detail */
+  .message-detail {
+    padding: var(--spacing-4);
+  }
+
+  .detail-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .detail-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .detail-actions .btn {
+    width: 100%;
+  }
+
+  /* Info rows */
+  .info-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-1);
+  }
+
+  /* Reply section */
+  .reply-actions {
+    flex-direction: column;
+  }
+
+  .reply-actions .btn {
+    width: 100%;
+  }
+
+  /* Contact info grid */
+  .contact-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Section card */
+  .section-card {
+    padding: var(--spacing-4);
+  }
+
+  /* Buttons */
+  .btn,
+  .btn-sm {
+    width: 100%;
+    justify-content: center;
+  }
+}
+

@@ -921,3 +921,116 @@ body.sidebar-open {
   background: var(--gray-400);
 }
 
+/* =========================
+   EXTRA SMALL SCREENS (≤480px)
+   ========================= */
+@media (max-width: 480px) {
+
+  /* Prevent horizontal overflow */
+  html, body {
+    overflow-x: hidden;
+  }
+
+  /* Admin layout */
+  .admin-layout {
+    flex-direction: column;
+  }
+
+  .admin-main {
+    margin-left: 0;
+  }
+
+  /* Header improvements */
+  .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-left {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .admin-user {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Actions bar */
+  .actions-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-tabs {
+    padding: var(--spacing-1);
+  }
+
+  .filter-tab {
+    padding: var(--spacing-2) var(--spacing-3);
+    font-size: 12px;
+  }
+
+  /* Stats cards */
+  .stat-card-admin {
+    padding: var(--spacing-4);
+    gap: var(--spacing-2);
+  }
+
+  .stat-card-admin .stat-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.5rem;
+  }
+
+  .stat-card-admin .stat-value {
+    font-size: var(--font-size-lg);
+  }
+
+  /* Sponsor cards */
+  .sponsor-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sponsor-body {
+    padding: var(--spacing-4);
+  }
+
+  .sponsor-description {
+    font-size: 13px;
+  }
+
+  .detail-row {
+    font-size: 13px;
+  }
+
+  /* Package cards */
+  .package-header {
+    padding: var(--spacing-4);
+  }
+
+  .package-price {
+    font-size: var(--font-size-md);
+  }
+
+  .package-body {
+    padding: var(--spacing-4);
+  }
+
+  /* Buttons */
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btn-sm {
+    width: 100%;
+  }
+
+  /* Footer button stacking */
+  .sponsor-footer,
+  .package-footer {
+    flex-direction: column;
+  }
+}
