@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Sidebar from '../components/Sidebar';
 import './GalleryManagement.css';
 
@@ -92,7 +92,19 @@ function GalleryManagement() {
   const [view, setView] = useState('grid');
   const [selectedImage, setSelectedImage] = useState(null);
 
-  const filteredItems = filter === 'all' 
+  // Handle body scroll lock when sidebar is open on mobile
+  useEffect(() => {
+    if (sidebarOpen) {
+      document.body.classList.add('sidebar-open');
+    } else {
+      document.body.classList.remove('sidebar-open');
+    }
+    return () => {
+      document.body.classList.remove('sidebar-open');
+    };
+  }, [sidebarOpen]);
+
+  const filteredItems = filter === 'all'
     ? galleryItems 
     : galleryItems.filter(item => item.category.toLowerCase() === filter);
 

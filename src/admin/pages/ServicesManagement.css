@@ -519,20 +519,31 @@
   .admin-header {
     padding: var(--spacing-3) var(--spacing-4);
     gap: var(--spacing-3);
+    flex-wrap: wrap;
   }
 
   .admin-header h1 {
     font-size: var(--font-size-lg);
-    width: 100%;
-    margin-top: var(--spacing-2);
+    width: calc(100% - 60px);
+    margin-top: 0;
+    order: 1;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .header-left {
     gap: var(--spacing-3);
+    order: 1;
+    flex: 1;
+    min-width: 0;
   }
 
   .admin-user {
     margin-left: auto;
+    order: 1;
   }
 
   .admin-content {
@@ -541,6 +552,7 @@
 
   .services-grid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-4);
   }
 
   .summary-grid {
@@ -549,10 +561,23 @@
 
   .service-header {
     padding: var(--spacing-4);
+    flex-wrap: wrap;
+    gap: var(--spacing-2);
   }
 
   .service-icon {
     font-size: 2rem;
+  }
+
+  .status-badge {
+    position: absolute;
+    top: var(--spacing-3);
+    right: var(--spacing-3);
+  }
+
+  .service-card {
+    position: relative;
+    padding: 0;
   }
 
   .service-body {
@@ -573,26 +598,58 @@
     font-size: var(--font-size-xl);
   }
 
+  .filter-tabs {
+    width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: var(--spacing-1);
+  }
+
+  .filter-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
   .filter-buttons {
     width: 100%;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--spacing-2);
   }
 
   .filter-buttons .btn {
-    width: 100%;
+    flex: 1;
+    min-width: calc(50% - var(--spacing-1));
+    padding: var(--spacing-2) var(--spacing-3);
+    font-size: var(--font-size-xs);
   }
 
   .service-meta {
-    flex-direction: column;
-    gap: var(--spacing-2);
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--spacing-3);
+  }
+
+  .meta-item {
+    flex: 1;
+    min-width: 100px;
   }
 
   .service-actions {
     flex-direction: column;
+    gap: var(--spacing-2);
   }
 
   .service-actions .btn {
     width: 100%;
+  }
+
+  /* Add scroll padding for filter tabs on mobile */
+  .filter-tab {
+    scroll-snap-align: start;
   }
 }
 
@@ -613,6 +670,11 @@
   .service-meta {
     flex-direction: column;
     gap: var(--spacing-2);
+  }
+
+  .meta-item {
+    flex: none;
+    min-width: auto;
   }
 
   .service-actions {
@@ -659,6 +721,25 @@
   .collapse-icon {
     transform: scale(0.8);
   }
+
+  .filter-buttons .btn {
+    min-width: 100%;
+    padding: var(--spacing-3) var(--spacing-4);
+    font-size: var(--font-size-sm);
+  }
+
+  .status-badge {
+    font-size: 0.65rem;
+    padding: var(--spacing-1) var(--spacing-2);
+  }
+}
+
+/* Body scroll lock when sidebar is open - Applied via JS */
+body.sidebar-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
 }
 
 /* Improve touch targets */
@@ -680,6 +761,20 @@
   }
 
   .summary-card {
+    min-height: 44px;
+  }
+
+  .collapse-btn {
+    min-width: 48px;
+    min-height: 48px;
+  }
+
+  .user-avatar {
+    width: 44px;
+    height: 44px;
+  }
+
+  .admin-user {
     min-height: 44px;
   }
 }

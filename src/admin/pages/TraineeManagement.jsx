@@ -51,9 +51,6 @@ function TraineeManagement() {
         <div className="admin-content">
           {/* Actions Bar */}
           <div className="actions-bar">
-            <div className="search-box">
-              <input type="text" placeholder="Search trainees..." />
-            </div>
             <div className="filter-buttons">
               <select className="filter-select">
                 <option value="">All Programs</option>
@@ -73,8 +70,9 @@ function TraineeManagement() {
             </div>
           </div>
           
-          {/* Trainees Table */}
+        {/* Trainees Table */}
           <section className="trainees-section">
+            {/* Table View - Desktop/Tablet */}
             <div className="table-container">
               <table className="data-table">
                 <thead>
@@ -112,6 +110,35 @@ function TraineeManagement() {
                   ))}
                 </tbody>
               </table>
+            </div>
+
+            {/* Card View - Mobile */}
+            <div className="trainee-cards">
+              {trainees.map((trainee) => (
+                <div className="trainee-card" key={trainee.id}>
+                  <div className="trainee-card-header">
+                    <div className="name-avatar">{trainee.name.charAt(0)}</div>
+                    <span className="trainee-card-name">{trainee.name}</span>
+                    <span className={`status-badge status-${trainee.status.toLowerCase()}`}>
+                      {trainee.status}
+                    </span>
+                  </div>
+                  <div className="trainee-card-body">
+                    <div className="trainee-card-row">
+                      <span className="trainee-card-label">Email</span>
+                      <span className="trainee-card-value">{trainee.email}</span>
+                    </div>
+                    <div className="trainee-card-row">
+                      <span className="trainee-card-label">Program</span>
+                      <span className="trainee-card-value">{trainee.program}</span>
+                    </div>
+                  </div>
+                  <div className="trainee-card-footer">
+                    <button className="btn btn-sm btn-outline">Edit</button>
+                    <button className="btn btn-sm btn-outline">Delete</button>
+                  </div>
+                </div>
+              ))}
             </div>
             
             {/* Pagination */}

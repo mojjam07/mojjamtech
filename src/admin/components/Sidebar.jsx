@@ -20,6 +20,7 @@ function Sidebar({ isOpen, setIsOpen }) {
   
   const navItems = [
     { path: '/admin/dashboard', label: 'Dashboard', icon: '📊' },
+    { path: '/admin/home', label: 'Home', icon: '🏠' },
     { path: '/admin/trainees', label: 'Trainees', icon: '👨‍🎓' },
     { path: '/admin/programs', label: 'Programs', icon: '📚' },
     { path: '/admin/about', label: 'About', icon: 'ℹ️' },

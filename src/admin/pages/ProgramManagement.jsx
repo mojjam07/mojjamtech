@@ -3,12 +3,40 @@ import Sidebar from '../components/Sidebar';
 import './ProgramManagement.css';
 
 function ProgramManagement() {
-  const [programs] = useState([
-    { id: 1, title: 'Frontend Development', duration: '3 months', trainees: 30, status: 'Active' },
-    { id: 2, title: 'Backend Development', duration: '3 months', trainees: 25, status: 'Active' },
-    { id: 3, title: 'Fullstack Development', duration: '6 months', trainees: 20, status: 'Active' },
-    { id: 4, title: 'React Mastery', duration: '2 months', trainees: 15, status: 'Draft' },
-    { id: 5, title: 'Node.js Fundamentals', duration: '2 months', trainees: 0, status: 'Upcoming' }
+  // Programs with all fields needed for website
+  const [programs, setPrograms] = useState([
+    { 
+      id: 1, 
+      title: 'Frontend Development', 
+      duration: '3 months', 
+      trainees: 30, 
+      status: 'Active',
+      description: 'Master the fundamentals of web development and learn to build beautiful, responsive websites using modern frameworks and best practices.',
+      skills: ['HTML', 'CSS', 'JavaScript', 'React'],
+      outcome: 'Job-ready frontend developer'
+    },
+    { 
+      id: 2, 
+      title: 'Backend Development', 
+      duration: '3 months', 
+      trainees: 25, 
+      status: 'Active',
+      description: 'Learn server-side programming, database design, and API development to create powerful backend systems.',
+      skills: ['Django', 'APIs', 'Databases'],
+      outcome: 'Backend developer capable of building robust server-side applications'
+    },
+    { 
+      id: 3, 
+      title: 'Fullstack Development', 
+      duration: '6 months', 
+      trainees: 20, 
+      status: 'Active',
+      description: 'Comprehensive program covering both frontend and backend technologies to become a versatile fullstack developer.',
+      skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Django', 'APIs', 'Databases'],
+      outcome: 'Complete fullstack developer ready for any challenge'
+    },
+    { id: 4, title: 'React Mastery', duration: '2 months', trainees: 15, status: 'Draft', description: '', skills: [], outcome: '' },
+    { id: 5, title: 'Node.js Fundamentals', duration: '2 months', trainees: 0, status: 'Upcoming', description: '', skills: [], outcome: '' }
   ]);
   
   const [sidebarOpen, setSidebarOpen] = useState(false);

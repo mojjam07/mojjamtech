@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Sidebar from '../components/Sidebar';
 import './ContactManagement.css';
 
@@ -77,7 +77,19 @@ function ContactManagement() {
   const [filter, setFilter] = useState('all');
   const [selectedMessage, setSelectedMessage] = useState(null);
 
-  const filteredMessages = filter === 'all' 
+  // Handle body scroll lock when sidebar is open on mobile
+  useEffect(() => {
+    if (sidebarOpen) {
+      document.body.classList.add('sidebar-open');
+    } else {
+      document.body.classList.remove('sidebar-open');
+    }
+    return () => {
+      document.body.classList.remove('sidebar-open');
+    };
+  }, [sidebarOpen]);
+
+  const filteredMessages = filter === 'all'
     ? messages 
     : messages.filter(m => m.status.toLowerCase() === filter);
 

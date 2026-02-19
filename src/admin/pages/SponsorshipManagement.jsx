@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Sidebar from '../components/Sidebar';
 import './SponsorshipManagement.css';
 
@@ -89,7 +89,19 @@ function SponsorshipManagement() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [filter, setFilter] = useState('all');
 
-  const filteredSponsors = filter === 'all' 
+  // Handle body scroll lock when sidebar is open on mobile
+  useEffect(() => {
+    if (sidebarOpen) {
+      document.body.classList.add('sidebar-open');
+    } else {
+      document.body.classList.remove('sidebar-open');
+    }
+    return () => {
+      document.body.classList.remove('sidebar-open');
+    };
+  }, [sidebarOpen]);
+
+  const filteredSponsors = filter === 'all'
     ? sponsors 
     : sponsors.filter(s => s.tier.toLowerCase() === filter);
 

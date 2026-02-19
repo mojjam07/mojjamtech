@@ -137,7 +137,6 @@ function App() {
                 <GalleryManagement />
               </ProtectedRoute>
             } />
-
             {/* 404 Not Found */}
             <Route path="*" element={
               <>

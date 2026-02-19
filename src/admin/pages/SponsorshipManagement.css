@@ -872,6 +872,32 @@
   }
 }
 
+/* Body scroll lock when sidebar is open */
+body.sidebar-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+/* Improve filter tabs scroll behavior */
+@media (max-width: 768px) {
+  .filter-tabs {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .filter-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-tab {
+    scroll-snap-align: start;
+  }
+}
+
 /* Scrollbar styling */
 .sponsors-section::-webkit-scrollbar,
 .packages-section::-webkit-scrollbar {
