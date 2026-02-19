@@ -519,19 +519,18 @@
   .admin-header {
     padding: var(--spacing-3) var(--spacing-4);
     gap: var(--spacing-3);
-    flex-wrap: wrap;
   }
 
   .admin-header h1 {
     font-size: var(--font-size-lg);
-    width: calc(100% - 60px);
+    width: auto;
     margin-top: 0;
-    order: 1;
+    order: 0;
     flex: 1;
-    min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    min-width: auto;
+    overflow: visible;
+    text-overflow: none;
+    white-space: normal;
   }
 
   .header-left {
@@ -543,7 +542,22 @@
 
   .admin-user {
     margin-left: auto;
-    order: 1;
+    order: 2;
+  }
+
+  .collapse-btn {
+    padding: var(--spacing-2);
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .user-avatar {
+    width: 36px;
+    height: 36px;
+    font-size: var(--font-size-sm);
   }
 
   .admin-content {
