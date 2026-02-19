@@ -420,16 +420,35 @@
     display: none;
   }
   
-  .header-actions {
-    display: none;
-  }
-  
   .mobile-menu-btn {
     display: flex;
   }
   
   .nav-mobile {
     display: block;
+  }
+  
+  /* Show header actions on mobile - order matters for layout */
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+  }
+  
+  /* Style admin link for mobile */
+  .nav-link-admin-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-link-admin {
+    font-size: var(--font-size-xs);
+    padding: var(--spacing-2) var(--spacing-3);
+  }
+  
+  /* Hide CTA button on mobile to save space */
+  .btn-header-cta {
+    display: none;
   }
 }
 

@@ -43,6 +43,26 @@ function Header() {
       <div className="header-glow"></div>
       <div className="container">
         <div className="header-content">
+          {/* Mobile Menu Button - Now on the LEFT side */}
+          <button 
+            className={`mobile-menu-btn ${isMenuOpen ? 'active' : ''}`} 
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+            aria-expanded={isMenuOpen}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="menu-icon">
+              <circle cx="4" cy="4" r="2.5" />
+              <circle cx="12" cy="4" r="2.5" />
+              <circle cx="20" cy="4" r="2.5" />
+              <circle cx="4" cy="12" r="2.5" />
+              <circle cx="12" cy="12" r="2.5" />
+              <circle cx="20" cy="12" r="2.5" />
+              <circle cx="4" cy="20" r="2.5" />
+              <circle cx="12" cy="20" r="2.5" />
+              <circle cx="20" cy="20" r="2.5" />
+            </svg>
+          </button>
+          
           {/* Logo */}
           <Link to="/" className="logo" onClick={closeMenu}>
             <div className="logo-container">
@@ -133,26 +153,6 @@ function Header() {
               <span className="nav-link nav-link-admin">Admin</span>
             </Link>
           </div>
-          
-          {/* Mobile Menu Button */}
-          <button 
-            className={`mobile-menu-btn ${isMenuOpen ? 'active' : ''}`} 
-            onClick={toggleMenu}
-            aria-label="Toggle menu"
-            aria-expanded={isMenuOpen}
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="menu-icon">
-              <circle cx="4" cy="4" r="2.5" />
-              <circle cx="12" cy="4" r="2.5" />
-              <circle cx="20" cy="4" r="2.5" />
-              <circle cx="4" cy="12" r="2.5" />
-              <circle cx="12" cy="12" r="2.5" />
-              <circle cx="20" cy="12" r="2.5" />
-              <circle cx="4" cy="20" r="2.5" />
-              <circle cx="12" cy="20" r="2.5" />
-              <circle cx="20" cy="20" r="2.5" />
-            </svg>
-          </button>
           
           {/* Mobile Navigation */}
           <nav className={`nav-mobile ${isMenuOpen ? 'nav-open' : ''}`}>
