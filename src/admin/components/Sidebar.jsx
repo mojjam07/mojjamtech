@@ -65,25 +65,19 @@ function Sidebar({ isOpen, setIsOpen }) {
         </nav>
         
         <div className="sidebar-footer">
+          <button 
+            className="nav-link logout-btn" 
+            onClick={handleLogout}
+          >
+            <span className="nav-icon">🚪</span>
+            <span className="nav-text">Logout</span>
+          </button>
           <Link to="/" className="nav-link" onClick={closeSidebar}>
             <span className="nav-icon">🏠</span>
             <span className="nav-text">View Website</span>
           </Link>
-          <button 
-            className="nav-link logout-btn" 
-            onClick={handleLogout}
-          >
-            <span className="nav-icon">🚪</span>
-            <span className="nav-text">Logout</span>
-          </button>
-          <button 
-            className="nav-link logout-btn" 
-            onClick={handleLogout}
-          >
-            <span className="nav-icon">🚪</span>
-            <span className="nav-text">Logout</span>
-          </button>
-        </div>
+          
+          </div>
       </aside>
     </>
   );
