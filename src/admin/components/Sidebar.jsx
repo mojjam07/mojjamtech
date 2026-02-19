@@ -75,9 +75,8 @@ function Sidebar({ isOpen, setIsOpen }) {
           <Link to="/" className="nav-link" onClick={closeSidebar}>
             <span className="nav-icon">🏠</span>
             <span className="nav-text">View Website</span>
-          </Link>
-          
-          </div>
+          </Link>  
+        </div>
       </aside>
     </>
   );
