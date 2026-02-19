@@ -76,6 +76,13 @@ function Sidebar({ isOpen, setIsOpen }) {
             <span className="nav-icon">🚪</span>
             <span className="nav-text">Logout</span>
           </button>
+          <button 
+            className="nav-link logout-btn" 
+            onClick={handleLogout}
+          >
+            <span className="nav-icon">🚪</span>
+            <span className="nav-text">Logout</span>
+          </button>
         </div>
       </aside>
     </>
