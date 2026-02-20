@@ -1,15 +1,16 @@
 import { Link } from 'react-router-dom';
+import { PageHeader } from '../components/Hero';
 import './About.css';
 
 function About() {
   return (
     <div className="about">
       {/* Page Header */}
-      <section className="page-header">
+      <PageHeader pageKey="about">
         <div className="container">
           <h1>About Us</h1>
         </div>
-      </section>
+      </PageHeader>
       
       {/* Story & Vision Section */}
       <section className="story-vision section">

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { PageHeader } from '../components/Hero';
 import './Contact.css';
 
 function Contact() {
@@ -57,7 +58,7 @@ function Contact() {
   return (
     <div className="contact">
       {/* Page Header */}
-      <section className="page-header">
+      <PageHeader pageKey="contact">
         <div className="page-header-bg"></div>
         <div className="container">
           <div className="page-header-content">
@@ -65,7 +66,7 @@ function Contact() {
             <p className="page-subtitle fade-in">We'd love to hear from you. Get in touch with us.</p>
           </div>
         </div>
-      </section>
+      </PageHeader>
       
       {/* Contact Content */}
       <section className="contact-content section">

@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
+import { Hero } from '../components/Hero';
 import './Home.css';
 
 function Home() {
   return (
     <div className="home">
       {/* Hero Section */}
-      <section className="hero">
+      <Hero pageKey="home">
         <div className="container">
           <div className="hero-content">
             <h1 className="hero-title">Empowering the Next Generation of Developers</h1>
@@ -18,7 +19,7 @@ function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </Hero>
       
       {/* What We Do Section */}
       <section className="what-we-do section">

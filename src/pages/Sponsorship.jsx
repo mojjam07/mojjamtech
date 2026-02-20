@@ -1,16 +1,17 @@
 import { Link } from 'react-router-dom';
+import { PageHeader } from '../components/Hero';
 import './Sponsorship.css';
 
 function Sponsorship() {
   return (
     <div className="sponsorship">
       {/* Page Header */}
-      <section className="page-header">
+      <PageHeader pageKey="sponsorship">
         <div className="container">
           <h1>Sponsor a Program</h1>
           <p>Partner with us to empower the next generation of developers</p>
         </div>
-      </section>
+      </PageHeader>
       
       {/* Why Sponsor Section */}
       <section className="why-sponsor section">

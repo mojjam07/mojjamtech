@@ -18,14 +18,17 @@ import ServicesManagement from './admin/pages/ServicesManagement';
 import SponsorshipManagement from './admin/pages/SponsorshipManagement';
 import ContactManagement from './admin/pages/ContactManagement';
 import GalleryManagement from './admin/pages/GalleryManagement';
+import HeroSettings from './admin/pages/HeroSettings';
 import { AuthProvider } from './contexts/AuthContext';
+import { SiteSettingsProvider } from './contexts/SiteSettingsContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import './App.css';
 
 function App() {
   return (
     <AuthProvider>
-      <Router>
+      <SiteSettingsProvider>
+        <Router>
         <div className="app">
           {/* Public Pages Layout */}
           <Routes>
@@ -137,6 +140,11 @@ function App() {
                 <GalleryManagement />
               </ProtectedRoute>
             } />
+            <Route path="/admin/hero-settings" element={
+              <ProtectedRoute>
+                <HeroSettings />
+              </ProtectedRoute>
+            } />
             {/* 404 Not Found */}
             <Route path="*" element={
               <>
@@ -149,7 +157,8 @@ function App() {
             } />
           </Routes>
         </div>
-      </Router>
+        </Router>
+      </SiteSettingsProvider>
     </AuthProvider>
   );
 }

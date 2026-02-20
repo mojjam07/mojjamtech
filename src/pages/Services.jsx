@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
+import { Hero } from '../components/Hero';
 import './Services.css';
 
 function Services() {
   return (
     <div className="services">
       {/* Hero Section */}
-      <section className="services-hero">
+      <Hero pageKey="services" className="services-hero">
         <div className="container">
           <div className="hero-content">
             <h1 className="hero-title">Professional Tech Services</h1>
@@ -15,7 +16,7 @@ function Services() {
             </p>
           </div>
         </div>
-      </section>
+      </Hero>
 
       {/* Services Overview */}
       <section className="services-overview section">

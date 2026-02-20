@@ -1,0 +1,204 @@
+/* Hero Settings Page Styles */
+
+.hero-settings-intro {
+  background: var(--gray-50);
+  padding: var(--spacing-6);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-8);
+}
+
+.hero-settings-intro p {
+  color: var(--gray-600);
+  margin: 0;
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+}
+
+.hero-settings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--spacing-6);
+  margin-bottom: var(--spacing-8);
+}
+
+.hero-setting-card {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.hero-setting-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.hero-setting-header {
+  background: var(--gradient-primary);
+  padding: var(--spacing-4) var(--spacing-5);
+}
+
+.hero-setting-header h3 {
+  color: var(--white);
+  font-size: var(--font-size-lg);
+  margin: 0;
+  font-weight: 600;
+}
+
+.hero-setting-preview {
+  padding: var(--spacing-4);
+  background: var(--gray-100);
+}
+
+.preview-image {
+  height: 120px;
+  border-radius: var(--radius-lg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--gray-200);
+}
+
+.no-image-text {
+  color: var(--gray-500);
+  font-size: var(--font-size-sm);
+  font-style: italic;
+}
+
+.hero-setting-select {
+  padding: var(--spacing-4);
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.hero-setting-select label {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--gray-700);
+  margin-bottom: var(--spacing-2);
+}
+
+.hero-setting-select select {
+  width: 100%;
+  padding: var(--spacing-3);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  background: var(--white);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.hero-setting-select select:hover {
+  border-color: var(--primary-color);
+}
+
+.hero-setting-select select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.hero-setting-current {
+  padding: var(--spacing-3) var(--spacing-4);
+  background: var(--gray-50);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.current-label {
+  font-size: var(--font-size-sm);
+  color: var(--gray-500);
+}
+
+.current-value {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--gray-700);
+}
+
+.hero-settings-info {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-backdrop);
+  border: 1px solid var(--glass-border);
+  padding: var(--spacing-6);
+  border-radius: var(--radius-xl);
+}
+
+.hero-settings-info h3 {
+  font-size: var(--font-size-lg);
+  color: var(--gray-900);
+  margin-bottom: var(--spacing-4);
+}
+
+.hero-settings-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hero-settings-info li {
+  padding: var(--spacing-2) 0;
+  padding-left: var(--spacing-6);
+  position: relative;
+  color: var(--gray-600);
+  font-size: var(--font-size-sm);
+}
+
+.hero-settings-info li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.save-notification {
+  background: var(--secondary-color);
+  color: var(--white);
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-settings-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .header-actions {
+    flex-wrap: wrap;
+    gap: var(--spacing-2);
+  }
+  
+  .save-notification {
+    width: 100%;
+    text-align: center;
+    order: -1;
+  }
+}
+

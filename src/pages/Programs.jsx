@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { PageHeader } from '../components/Hero';
 import './Programs.css';
 
 function Programs() {
@@ -32,12 +33,12 @@ function Programs() {
   return (
     <div className="programs">
       {/* Page Header */}
-      <section className="page-header">
+      <PageHeader pageKey="programs">
         <div className="container">
           <h1>Training Programs</h1>
           <p>Choose the program that fits your career goals</p>
         </div>
-      </section>
+      </PageHeader>
       
       {/* Programs List */}
       <section className="programs-list section">

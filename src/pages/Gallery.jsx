@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { PageHeader } from '../components/Hero';
 import './Gallery.css';
 
 function Gallery() {
@@ -86,14 +87,14 @@ function Gallery() {
   return (
     <div className="gallery">
       {/* Page Header */}
-      <section className="page-header">
+      <PageHeader pageKey="gallery">
         <div className="container">
           <div className="page-header-content">
             <h1 className="page-title fade-in">Gallery</h1>
             <p className="page-subtitle fade-in">Explore our training sessions, events, and projects through images.</p>
           </div>
         </div>
-      </section>
+      </PageHeader>
 
       {/* Gallery Content */}
       <section className="gallery-content section">
