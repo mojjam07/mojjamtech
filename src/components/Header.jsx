@@ -41,7 +41,7 @@ function Header() {
   return (
     <header className={`header ${isScrolled ? 'header-scrolled' : ''}`}>
       <div className="header-glow"></div>
-      <div className="container">
+      <div className="container-fluid">
         <div className="header-content">
           {/* Mobile Menu Button - Now on the LEFT side */}
           <button 

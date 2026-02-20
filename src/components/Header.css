@@ -47,6 +47,18 @@
   justify-content: space-between;
   height: var(--header-height);
   transition: height 0.3s ease;
+  overflow: hidden;
+  gap: var(--spacing-4);
+}
+
+/* Ensure logo doesn't shrink too much */
+.header-content .logo {
+  flex-shrink: 0;
+}
+
+/* Ensure mobile menu button doesn't shrink */
+.header-content .mobile-menu-btn {
+  flex-shrink: 0;
 }
 
 /* Logo Styles */
@@ -414,7 +426,7 @@
   visibility: visible;
 }
 
-/* Medium screens (tablets) */
+/* Medium tablets - transition zone */
 @media (max-width: 1024px) {
   .nav-desktop {
     display: none;
@@ -428,27 +440,39 @@
     display: block;
   }
   
-  /* Show header actions on mobile - order matters for layout */
+  /* Show header actions on smaller screens */
   .header-actions {
     display: flex;
     align-items: center;
     gap: var(--spacing-2);
   }
   
-  /* Style admin link for mobile */
-  .nav-link-admin-wrapper {
-    display: flex;
-    align-items: center;
-  }
-  
-  .nav-link-admin {
-    font-size: var(--font-size-xs);
-    padding: var(--spacing-2) var(--spacing-3);
-  }
-  
-  /* Hide CTA button on mobile to save space */
+  /* Compact CTA button for tablets */
   .btn-header-cta {
-    display: none;
+    padding: var(--spacing-2) var(--spacing-4);
+    font-size: var(--font-size-xs);
+  }
+  
+  /* Compact admin link for tablets */
+  .nav-link-admin {
+    padding: var(--spacing-2) var(--spacing-3);
+    font-size: var(--font-size-xs);
+  }
+}
+
+/* Large tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .header-content {
+    height: 64px;
+  }
+  
+  .logo-img {
+    height: 34px;
+  }
+  
+  .mobile-menu-btn {
+    width: 46px;
+    height: 46px;
   }
 }
 
@@ -456,6 +480,7 @@
 @media (max-width: 768px) {
   .header-content {
     height: 60px;
+    padding: 0 var(--spacing-3);
   }
   
   .logo-text {
@@ -465,12 +490,39 @@
   .logo-img {
     height: 32px;
   }
+  
+  .mobile-menu-btn {
+    width: 44px;
+    height: 44px;
+  }
+  
+  /* Header actions for mobile */
+  .header-actions {
+    gap: var(--spacing-1);
+  }
+  
+  /* More compact CTA for mobile */
+  .btn-header-cta {
+    padding: var(--spacing-2) var(--spacing-3);
+    font-size: var(--font-size-xs);
+  }
+  
+  .btn-header-cta svg {
+    display: none;
+  }
+  
+  /* Hide admin link on mobile */
+  .nav-link-admin-wrapper {
+    display: none;
+  }
 }
 
 /* Small mobile */
 @media (max-width: 480px) {
   .header-content {
     height: 56px;
+    padding: 0 var(--spacing-2);
+    gap: var(--spacing-2);
   }
   
   .logo-text {
@@ -478,12 +530,18 @@
   }
   
   .logo-img {
-    height: 36px;
+    height: 28px;
   }
   
   .mobile-menu-btn {
     width: 40px;
     height: 40px;
+    padding: var(--spacing-2);
+  }
+  
+  .mobile-menu-btn .menu-icon {
+    width: 18px;
+    height: 18px;
   }
   
   .mobile-menu-btn span {
@@ -492,6 +550,27 @@
   
   .nav-mobile-content {
     padding-top: calc(56px + var(--spacing-4));
+  }
+}
+
+/* Extra small mobile */
+@media (max-width: 360px) {
+  .header-content {
+    height: 52px;
+  }
+  
+  .logo-img {
+    height: 24px;
+  }
+  
+  .mobile-menu-btn {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .mobile-menu-btn .menu-icon {
+    width: 16px;
+    height: 16px;
   }
 }
 

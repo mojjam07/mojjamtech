@@ -7,8 +7,8 @@ const defaultHeroImages = {
   home: '/techconf.png',
   services: '/robot.png',
   about: '/logo_brand.png',
-  programs: '/program2.jpg',
-  sponsorship: '/program1.jpg',
+  programs: '/robot.png',
+  sponsorship: '/mojjam.png',
   contact: '/robot.png',
   gallery: '/mojjam.png'
 };
